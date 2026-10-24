@@ -1,10 +1,12 @@
 /**
  * Triprasa Supabase adapter — integration scaffold only.
  *
- * This module does not connect until supabase/config.js contains a project URL
- * and a publishable/anon key. It intentionally does not write order/payment data.
+ * This module does not connect until a local, untracked supabase/config.js
+ * supplies a project URL and publishable/anon key. It never writes order/payment data.
  */
-import { SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY } from "./config.js";
+const config = await import("./config.js").catch(() => ({}));
+const SUPABASE_URL = config.SUPABASE_URL ?? "";
+const SUPABASE_PUBLISHABLE_KEY = config.SUPABASE_PUBLISHABLE_KEY ?? "";
 
 const configured = Boolean(
   SUPABASE_URL &&
