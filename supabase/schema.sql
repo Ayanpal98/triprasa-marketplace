@@ -181,10 +181,9 @@ create policy "orders_read_own_or_admin" on public.orders
 for select to authenticated
 using (user_id = (select auth.uid()) or (select private.is_admin()));
 
+-- Client-side order creation is intentionally disabled until a trusted server-side
+-- checkout validates current prices, stock, totals, and verified payment status.
 drop policy if exists "orders_insert_pending_own" on public.orders;
-create policy "orders_insert_pending_own" on public.orders
-for insert to authenticated
-with check (user_id = (select auth.uid()) and status = 'pending');
 
 drop policy if exists "orders_admin_update" on public.orders;
 create policy "orders_admin_update" on public.orders
@@ -202,23 +201,16 @@ using (
   )
 );
 
+-- Client-side order-item creation is intentionally disabled until trusted checkout exists.
 drop policy if exists "order_items_insert_pending_owned_order" on public.order_items;
-create policy "order_items_insert_pending_owned_order" on public.order_items
-for insert to authenticated
-with check (
-  exists (
-    select 1 from public.orders o
-    where o.id = order_id and o.user_id = (select auth.uid()) and o.status = 'pending'
-  )
-);
 
 grant select on public.products to anon, authenticated;
 grant select, insert, update, delete on public.products to authenticated;
 grant select, insert on public.maker_applications to authenticated;
 grant update on public.maker_applications to authenticated;
-grant select, insert on public.orders to authenticated;
+grant select on public.orders to authenticated;
 grant update on public.orders to authenticated;
-grant select, insert on public.order_items to authenticated;
+grant select on public.order_items to authenticated;
 grant select, update on public.profiles to authenticated;
 
 -- Create a user account through Supabase Auth, then promote the intended operator manually:
