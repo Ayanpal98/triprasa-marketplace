@@ -2,7 +2,7 @@
 
 ## Current mode
 
-This is preparation code only. No Supabase project is selected or connected. `supabase/config.js` intentionally contains empty values, so the adapter cannot initialize a client. The current storefront and admin continue using browser-local demo data.
+This is preparation code only. No Supabase project is selected or connected. The adapter safely loads with no local `supabase/config.js` and remains unconfigured. The current storefront and admin continue using browser-local demo data.
 
 ## Files
 
@@ -14,8 +14,8 @@ This is preparation code only. No Supabase project is selected or connected. `su
 ## Configure later
 
 1. Select or create a dedicated Triprasa Supabase project.
-2. Review and apply `schema.sql) only after checking it against the selected project's policies and schema.
-3. Copy `config.example.js` to `config.js`, then add the project URL and its publishable/anon key.
+2. Review and apply `schema.sql` only after checking it against the selected project's policies and schema.
+3. Copy `config.example.js` to `config.js` locally (the file is git-ignored), then add the project URL and its publishable/anon key. Never commit that local file.
 4. Create the first operator via Supabase Auth. Promote that specific Auth UUID to `admin` using a trusted SQL session. Never expose privileged keys in browser code.
 5. Include the adapter from a page using an ES module, for example:
    ```html
@@ -43,7 +43,7 @@ This is preparation code only. No Supabase project is selected or connected. `su
 - Uploading product images to Storage.
 - Admin role provisioning from the client.
 
-Orders must not be created from trusted client-submitted prices. Before checkout is enabled, move price validation, inventory checks, totals, and payment verification to a trusted server-side function and review order-item policies.
+Client-side order and order-item inserts are deliberately disabled in the proposed schema. Before checkout is enabled, move price validation, inventory checks, totals, and payment verification to a trusted server-side function and review order-item policies.
 
 ## Security notes
 
