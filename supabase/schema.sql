@@ -75,6 +75,31 @@ create index if not exists maker_applications_status_created_idx on public.maker
 create index if not exists orders_user_created_idx on public.orders(user_id, created_at desc);
 create index if not exists order_items_order_idx on public.order_items(order_id);
 
+-- Automatically create a least-privilege customer profile after Supabase Auth signup.
+create or replace function private.handle_new_user()
+returns trigger
+language plpgsql
+security definer
+set search_path = ''
+as $
+begin
+  insert into public.profiles (id, display_name, role)
+  values (
+    new.id,
+    coalesce(new.raw_user_meta_data ->> 'display_name', ''),
+    'customer'
+  )
+  on conflict (id) do nothing;
+  return new;
+end;
+$;
+
+revoke all on function private.handle_new_user() from public, anon, authenticated;
+drop trigger if exists on_auth_user_created_triprasa on auth.users;
+create trigger on_auth_user_created_triprasa
+after insert on auth.users
+for each row execute function private.handle_new_user();
+
 -- The function lives in a non-exposed schema and checks the authenticated user's DB role.
 create or replace function private.is_admin()
 returns boolean
