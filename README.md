@@ -4,11 +4,11 @@ Triprasa is an early-stage, community-first marketplace concept intended to help
 
 ## Current status
 
-**Frontend prototype only.** The repository demonstrates a responsive storefront, illustrative product cards, client-side search and category filters, sorting, a local demo basket, and a local-only seller-interest preview.
+**Frontend prototype with shared-backend scaffolding.** The repository includes a responsive storefront, illustrative product cards, client-side search and category filters, sorting, a local demo basket, and a local-only seller-interest flow. Supabase schema and adapter files are prepared but not connected.
 
-- No backend, database, accounts, live seller onboarding, real checkout, payments, shipping, or order processing.
+- No live backend connection, shared accounts, live seller onboarding, real checkout, payments, shipping, or order processing. The Supabase schema is proposed and has not been applied.
 - Product names, maker labels, descriptions and prices are illustrative placeholders, not verified listings or purchase offers.
-- The seller-interest preview does not transmit or save form data.
+- Maker-interest submissions currently remain in the visitor's browser; they are not sent to a server or visible to other devices.
 - No real traction, seller count, partnerships, certifications or impact results are claimed.
 
 ## Run locally
@@ -18,6 +18,8 @@ Open `index.html` directly in a modern browser, or serve the repository using an
 ## Project documents
 
 - [Product specification](PRODUCT_SPEC.md)
+- [Shared-backend integration guide](supabase/INTEGRATION.md)
+- [Proposed database schema](supabase/schema.sql)
 - [Roadmap](docs/ROADMAP.md)
 - [Frontend quality checklist](docs/QUALITY_CHECKLIST.md)
 - [Contributing guidance](CONTRIBUTING.md)
