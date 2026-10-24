@@ -25,3 +25,6 @@ npm-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 *.log
+
+# Local Supabase credentials/config (never commit)
+supabase/config.js
