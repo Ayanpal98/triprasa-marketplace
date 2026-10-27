@@ -753,6 +753,37 @@ img,svg,video,canvas{max-width:100%}
  .culture-intro{grid-column:auto}
 }
 
+
+/* Image-free visual system: replace all stock photography with contained abstract craft motifs. */
+.hero-art{
+ background:radial-gradient(ellipse at 72% 30%,#e4c47c 0 8%,transparent 8.5%),radial-gradient(ellipse at 68% 38%,#c58b4b 0 17%,transparent 17.5%),linear-gradient(135deg,#e9dfc8,#c6d0bb 54%,#7e9278) !important;
+}
+.hero-art:before,.hero-art:after{content:none!important;display:none!important}
+.hero-art .sun{display:block;position:absolute;top:14%;right:16%;width:clamp(100px,20vw,220px);aspect-ratio:1;border-radius:50%;background:#f5e8c5;opacity:.85}
+.hero-art .art-ring{display:block;position:absolute;left:14%;top:16%;width:58%;height:65%;border:2px solid #f8f2e5;border-radius:48% 52% 44% 56%;transform:rotate(-28deg)}
+.hero-art .woven{display:block;position:absolute;left:20%;bottom:10%;width:52%;height:48%;border-radius:48% 48% 12% 12%;background:repeating-linear-gradient(90deg,#285040 0 7px,#d9a43b 7px 11px,#f7f3e9 11px 14px);opacity:.9;transform:rotate(-8deg);box-shadow:14px 12px 0 #28504020}
+.hero-art .floating-note{background:#fffaf0eF;color:#183d2c}
+.hero-art .art-label{color:#183d2c}
+.category-art{background-image:none!important;position:relative;isolation:isolate}
+.category-art:before{content:"";position:absolute;inset:0;z-index:-1;opacity:1!important;background:linear-gradient(135deg,#e8d6c1,#b8c5ad)!important}
+.cat-1{background:linear-gradient(135deg,#e8d6c1,#b6a08d)!important}
+.cat-2{background:linear-gradient(135deg,#b7c6ba,#617e6b)!important}
+.cat-3{background:linear-gradient(135deg,#f0e5c9,#d9a43b)!important}
+.cat-4{background:linear-gradient(135deg,#d7c4a8,#9c795b)!important}
+.category-art span{display:grid;place-items:center;width:86px;height:86px;border-radius:50%;background:#f7f3e9;color:#285040;font-size:44px!important;box-shadow:0 10px 30px #183d2c14}
+.category-art i{color:#183d2c!important;text-shadow:none!important}
+.product-visual,.detail-art{background-image:none!important;position:relative;isolation:isolate;overflow:hidden}
+.product-visual:before,.detail-art:before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(circle at 72% 24%,#fff8 0 9%,transparent 9.5%),linear-gradient(135deg,#e8dfcc,#b9c6b3)!important}
+.product-visual.textiles,.detail-art.textiles{background:linear-gradient(135deg,#ead8cf,#c5a69b)!important}
+.product-visual.home,.detail-art.home{background:linear-gradient(135deg,#c3d0c2,#78947d)!important}
+.product-visual.food,.detail-art.food{background:linear-gradient(135deg,#f0e5c7,#d9b86b)!important}
+.product-visual.craft,.detail-art.craft{background:linear-gradient(135deg,#e0c9aa,#a98b69)!important}
+.product-visual:after{content:"";position:absolute;inset:12%;z-index:-1;border:1px solid #fff9;border-radius:48% 52% 42% 58%;transform:rotate(-18deg);background:repeating-linear-gradient(45deg,#28504012 0 2px,transparent 2px 10px)!important}
+.product-visual .emoji,.detail-art .emoji{position:relative;z-index:1;display:grid;place-items:center;width:88px;height:88px;margin:auto;border-radius:50%;background:#f7f3e9;color:#285040;box-shadow:0 8px 24px #183d2c18;font-size:42px}
+.story-art{background:radial-gradient(circle at 68% 32%,#f1dfb2 0 12%,transparent 12.5%),linear-gradient(135deg,#c3d0bd,#e8d9c0 52%,#9eae95)!important}
+.story-art:before,.story-art:after{content:none!important;display:none!important}
+.story-seal{background:#f7f3e9;color:#285040}
+
 </style>
 </head>
 <body>
