@@ -100,17 +100,77 @@ button,a{touch-action:manipulation}
 .logo[style*="background:var(--gold)"] .triprasa-mark{color:var(--forest)}
 .dot{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--sage);color:var(--forest);font-size:11px;font-weight:800;letter-spacing:.04em}
 
+
+/* Visual audit polish — align Creator Circle with the Triprasa storefront */
+body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+::selection{background:#d6ad6266;color:var(--forest)}
+.site-header{box-shadow:0 5px 24px #183d2c06}
+.nav{min-height:78px}
+.brand{letter-spacing:.12em}
+.logo{border-radius:13px;box-shadow:inset 0 0 0 1px #ffffff16}
+.triprasa-mark{width:76%;height:76%}
+.navlinks{align-items:center;gap:clamp(12px,2vw,24px)}
+.navlinks a{padding:10px 0;transition:color .18s}
+.hero{padding-top:26px}
+.hero-panel{border-radius:24px 58px 24px 24px;box-shadow:0 18px 48px #183d2c0b}
+.hero h1{line-height:1.01}
+.hero-art{isolation:isolate}
+.section{padding-top:clamp(40px,5vw,64px);padding-bottom:clamp(40px,5vw,64px)}
+.card,.idea,.formbox{border-radius:18px}
+.card{padding:26px;transition:transform .2s,box-shadow .2s,border-color .2s}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:#bdc9b5}
+.card .symbol{border-radius:14px}
+.idea{border-radius:18px;transition:transform .2s,box-shadow .2s}
+.idea:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.band{border-radius:22px}
+.cta{border-radius:24px}
+.formbox{box-shadow:0 18px 45px #10201616}
+.field input,.field select,.field textarea{border-radius:10px;min-height:46px}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--forest);box-shadow:0 0 0 3px #244f3920}
+.checks input{width:16px;height:16px;flex:0 0 auto}
+.btn{min-height:44px;box-shadow:0 4px 12px #183d2c0a}
+.btn:focus-visible,.navlinks a:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.btn:active{transform:scale(.98)}
+details{padding:19px 0}
+summary{line-height:1.4}
+.notice{border-radius:10px}
+footer{padding-top:42px}
+@media(max-width:760px){
+ .hero{padding-top:16px}
+ .hero-panel{border-radius:20px 34px 20px 20px}
+ .hero-art{min-height:270px}
+ .section{padding:36px 0}
+ .grid,.creator-ideas{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .card{padding:20px}
+ .band,.cta{border-radius:20px}
+ .formbox{padding:20px}
+ .navlinks{gap:14px}
+}
+@media(max-width:480px){
+ .wrap{width:calc(100% - 24px)}
+ .announcement{font-size:9px;letter-spacing:.035em;line-height:1.6}
+ .hero-copy{padding:24px 18px}
+ .hero h1{font-size:clamp(39px,11.5vw,52px)}
+ .hero-art{min-height:225px}
+ .grid,.creator-ideas,.checks{grid-template-columns:minmax(0,1fr)}
+ .card{padding:22px}
+ .idea{min-height:180px}
+ .formbox{padding:16px}
+ .footer-links{flex-wrap:wrap;gap:12px}
+}
+@media(prefers-reduced-motion:reduce){.card,.idea,.btn{transition:none}}
+
 </style>
 </head>
 <body>
-<div class="announcement">✳ TRIPRASA CREATOR CIRCLE · LOCAL VOICES, SHARED OPPORTUNITY ✳</div>
+<div class="announcement">• TRIPRASA CREATOR CIRCLE · LOCAL VOICES, SHARED OPPORTUNITY •</div>
 <header class="site-header"><div class="wrap nav"><a class="brand" href="index.html"><span class="logo" aria-hidden="true"><svg class="triprasa-mark" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M24 5C15 12 9 19 9 27a15 15 0 0 0 30 0C39 19 33 12 24 5Z" fill="currentColor"/><path d="M15 31c7-1 13-7 18-16M15 31c4 1 8 0 11-3" fill="none" stroke="#D8B36C" stroke-width="2.4" stroke-linecap="round"/><path d="M24 14v22" stroke="#D8B36C" stroke-width="1.8" stroke-linecap="round"/></svg></span><span>TRIPRASA</span></a><nav class="navlinks"><a href="index.html">Marketplace</a><a href="#how">How it works</a><a href="#businesses">For businesses</a><a href="#apply">Join the circle</a></nav><a class="btn gold" href="#apply">Become a creator ↗</a></div></header>
 <main>
 <section class="hero"><div class="wrap"><div class="hero-panel"><div class="hero-copy"><div class="eyebrow">A new chapter for local discovery</div><h1>Local voices.<br><em>Stories that move.</em></h1><p>Great local businesses deserve more than a listing. Triprasa Creator Circle is a proposed community where local storytellers, reviewers, photographers and video hosts help people discover the makers, shops, food and services around them—through honest content, short videos and live sessions.</p><div class="actions"><a class="btn gold" href="#apply">I’m a local creator ↗</a><a class="btn outline" href="#businesses">I run a business</a></div><p class="fine">Early concept and interest form. Creator profiles, paid collaborations, booking and livestream tools are not active yet.</p></div><div class="hero-art" role="img" aria-label="Abstract woven pattern in green, terracotta and gold"><div class="reel">▶</div><div class="art-caption">Real people. Real places.</div></div></div></div></section>
 <section class="section" id="why"><div class="wrap"><div class="section-head"><div class="eyebrow">Why join Triprasa?</div><h2>Make discovery feel human again.</h2><p class="muted">People trust useful local knowledge. Creators bring the personality; businesses bring the craft and service; the community gets a richer way to find and support what is nearby.</p></div><div class="grid"><article class="card"><div class="symbol">◉</div><h3>Build your local voice</h3><p>Show your perspective through neighbourhood guides, product walkthroughs, maker interviews, food stories and short-form videos. Start with the community you already know.</p></article><article class="card"><div class="symbol">↗</div><h3>Find collaboration opportunities</h3><p>Help local businesses tell their story. As the programme develops, collaborations may include agreed content briefs, campaign fees or other transparent arrangements—not guaranteed income.</p></article><article class="card"><div class="symbol">♡</div><h3>Help local businesses grow</h3><p>Give customers a better feel for the people and work behind a business. Disclose paid partnerships, share honest opinions and never promise results you cannot verify.</p></article></div></div></section>
 <section class="section" id="formats"><div class="wrap"><div class="section-head"><div class="eyebrow">Content that can bring a place to life</div><h2>From a 30-second reel to a live walk-through.</h2><p class="muted">The creator programme can support several formats. Live video is a planned capability, not a working livestream feature on this prototype page.</p></div><div class="creator-ideas"><article class="idea"><div class="big">▣</div><div><h3>Creator vouches</h3><p>First-look reviews, personal recommendations and “what to know before you visit” videos—with honest disclosure and no fake testimonials.</p></div></article><article class="idea"><div class="big">▶</div><div><h3>Short videos & stories</h3><p>Behind-the-scenes clips, how-it’s-made features, product demos, local food trails and interviews with the people doing the work.</p></div></article><article class="idea"><div class="big">◉</div><div><h3>Live business sessions</h3><p>Future hosted livestreams for shop tours, new-product showcases, maker Q&As and audience questions, subject to platform, consent and moderation setup.</p></div></article></div></div></section>
 <section class="section" id="how"><div class="wrap"><div class="band"><div><div class="eyebrow">A simple, fair starting point</div><h2>Start with trust. Grow with proof.</h2><p class="muted">The aim is to build a useful local creator network—not a pay-to-praise directory. Participation should be clear, respectful and safe for creators, businesses and customers alike.</p></div><div class="band-list"><div><span class="dot" aria-hidden="true">01</span><span><b>1. Introduce yourself.</b> Share your content style, language, location and links to work you actually created.</span></div><div><span class="dot" aria-hidden="true">02</span><span><b>2. Match a local story.</b> Creators and businesses agree the scope, schedule, permissions and any compensation before work starts.</span></div><div><span class="dot" aria-hidden="true">03</span><span><b>3. Create with consent.</b> Confirm permission to film people, premises, products and cultural material; disclose gifted or paid partnerships.</span></div><div><span class="dot" aria-hidden="true">04</span><span><b>4. Share and learn.</b> Review audience response honestly. Do not fabricate views, reviews, sales or endorsements.</span></div></div></div></div></section>
-<section class="section" id="businesses"><div class="wrap"><div class="section-head"><div class="eyebrow">For local businesses & makers</div><h2>Your business has a story. Let people see it.</h2><p class="muted">Whether you run a small shop, café, homestay, handloom studio, food brand, service business or independent practice, a good creator can help potential customers understand what makes you worth visiting.</p></div><div class="grid"><article class="card"><div class="symbol">⌂</div><h3>Show the real place</h3><p>Tour your shop, studio, kitchen or workspace. Help customers understand what they can expect before they arrive.</p></article><article class="card"><div class="symbol">✳</div><h3>Put makers in the frame</h3><p>Introduce the people, process and care behind the work. Let each person choose what they want shared and how they want to be credited.</p></article><article class="card"><div class="symbol">◎</div><h3>Plan a campaign or live</h3><p>Describe a launch, product demo, Q&A or event you would like to promote. The initial form collects interest only; it does not book a creator or livestream.</p></article></div><div style="margin-top:24px"><a class="btn" href="#apply">I’m a business looking for creators ↗</a></div></div></section>
+<section class="section" id="businesses"><div class="wrap"><div class="section-head"><div class="eyebrow">For local businesses & makers</div><h2>Your business has a story. Let people see it.</h2><p class="muted">Whether you run a small shop, café, homestay, handloom studio, food brand, service business or independent practice, a good creator can help potential customers understand what makes you worth visiting.</p></div><div class="grid"><article class="card"><div class="symbol">⌂</div><h3>Show the real place</h3><p>Tour your shop, studio, kitchen or workspace. Help customers understand what they can expect before they arrive.</p></article><article class="card"><div class="symbol">•</div><h3>Put makers in the frame</h3><p>Introduce the people, process and care behind the work. Let each person choose what they want shared and how they want to be credited.</p></article><article class="card"><div class="symbol">◎</div><h3>Plan a campaign or live</h3><p>Describe a launch, product demo, Q&A or event you would like to promote. The initial form collects interest only; it does not book a creator or livestream.</p></article></div><div style="margin-top:24px"><a class="btn" href="#apply">I’m a business looking for creators ↗</a></div></div></section>
 <section class="section" id="apply"><div class="wrap"><div class="cta"><div><div class="eyebrow">Join the founding circle</div><h2>Bring your voice. Help shape what comes next.</h2><p>We’re inviting local creators and businesses to register interest in the programme. Tell us what you make, the kind of content you enjoy, and what collaboration could look like for you.</p><p><b>Our ground rules:</b> real identities, honest reviews, clear paid-partnership disclosure, permission before filming, no fake engagement, no harassment, and respect for local communities and cultural knowledge.</p></div><div class="formbox"><h3>Register your interest</h3><p class="muted">For creators, local businesses, and community storytellers.</p><form id="interestForm"><div class="field"><label for="role">I’m joining as…</label><select id="role" name="role" required><option value="">Choose one</option><option>Content creator / reviewer</option><option>Video creator / livestream host</option><option>Local business / maker</option><option>Community organisation</option></select></div><div class="field"><label for="name">Name or public/business name</label><input id="name" name="name" maxlength="100" required autocomplete="name" placeholder="What should we call you?"></div><div class="field"><label for="area">Town / district</label><input id="area" name="area" maxlength="100" required placeholder="e.g. Agartala, Udaipur, Dharmanagar"></div><div class="field"><label for="contact">Contact email or social profile</label><input id="contact" name="contact" maxlength="180" required placeholder="Email or public profile URL"></div><div class="field"><label for="formats">What would you like to create?</label><div class="checks"><label><input type="checkbox" name="formats" value="Short videos"> Short videos / reels</label><label><input type="checkbox" name="formats" value="Reviews and vouches"> Reviews / vouches</label><label><input type="checkbox" name="formats" value="Live sessions"> Live sessions</label><label><input type="checkbox" name="formats" value="Photography and stories"> Photos / stories</label><label><input type="checkbox" name="formats" value="Business campaigns"> Business campaigns</label><label><input type="checkbox" name="formats" value="Maker interviews"> Maker interviews</label></div></div><div class="field"><label for="links">Portfolio, channel or business link (optional)</label><input id="links" name="links" maxlength="300" placeholder="Paste a public link"></div><div class="field"><label for="notes">What would you like Triprasa to know? (optional)</label><textarea id="notes" name="notes" maxlength="600" placeholder="Your idea, preferred language, experience or collaboration goals"></textarea></div><button class="btn gold" type="submit" style="width:100%">Save interest preview ↗</button><div class="notice" id="formNotice" role="status" aria-live="polite"></div><p class="fine">Prototype notice: this form saves the details only in this browser’s local storage. It does not send them to Triprasa, contact you, verify your identity or reserve a collaboration. Avoid sharing sensitive personal information.</p></form></div></div></div></section>
 <section class="section" id="faq"><div class="wrap"><div class="section-head"><div class="eyebrow">A few important answers</div><h2>Clear expectations make better community.</h2></div><div class="faq"><details><summary>Will creators get paid?</summary><p>Paid collaborations are a possible part of the future programme, but no rate card, matching service or payment system is active yet. Any future fee, deliverables, usage rights and payment timing should be agreed in writing before work begins.</p></details><details><summary>Can I go live from the website?</summary><p>Not yet. This page describes a planned live-video format. A production-ready feature would need a streaming provider, creator permissions, moderation, reporting, privacy controls and a clear plan for recording and reuse. In the meantime, creators can indicate interest in hosting sessions.</p></details><details><summary>Can businesses pay for positive reviews?</summary><p>Triprasa should not sell positive opinions. A business may pay for clearly disclosed sponsored content or a defined production service, but creators must retain the ability to share honest views. Never label a paid promotion as an independent review.</p></details><details><summary>Who can join?</summary><p>Local creators, photographers, reviewers, video hosts, makers, shop owners and community organisations are welcome to express interest. Any future participation process will need clear eligibility, safety and community standards.</p></details></div></div></section>
 </main>
