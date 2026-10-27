@@ -160,11 +160,30 @@ footer{padding-top:42px}
 }
 @media(prefers-reduced-motion:reduce){.card,.idea,.btn{transition:none}}
 
+
+/* Live, time-aware prototype indicators (client-side; not server activity) */
+.livebar{background:linear-gradient(90deg,#173d2b,#244f39);color:#f7f4eb;border-bottom:1px solid #d6ad6240}
+.livebar-inner{min-height:42px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:8px 0}
+.live-label{display:inline-flex;align-items:center;gap:8px;font-size:10px;letter-spacing:.07em;text-transform:uppercase;color:#f2e4c7}
+.live-dot{width:7px;height:7px;border-radius:50%;background:#9fc58d;box-shadow:0 0 0 4px #9fc58d20;animation:livePulse 2s ease-in-out infinite}
+.live-meta{display:flex;align-items:center;gap:12px;font-size:11px;color:#e2e8dc;font-variant-numeric:tabular-nums}
+.live-meta time{color:#f3d79b;font-weight:800}
+.live-separator{color:#829783}
+@keyframes livePulse{0%,100%{opacity:1;box-shadow:0 0 0 4px #9fc58d20}50%{opacity:.7;box-shadow:0 0 0 7px #9fc58d0c}}
+.live-count{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:0 0 14px;padding:10px 13px;background:#fffdf8;border:1px solid #e7e0d2;border-radius:12px;color:#647064;font-size:11px}
+.live-count strong{color:var(--forest)}
+.live-count .live-hint{display:flex;align-items:center;gap:7px}
+.live-count .live-hint span{color:var(--clay);font-weight:800}
+.time-greeting{color:var(--forest);font-weight:800}
+@media(max-width:480px){.livebar-inner{gap:6px}.live-label{font-size:9px}.live-meta{font-size:10px;gap:7px}.live-count{align-items:flex-start;flex-direction:column}}
+@media(prefers-reduced-motion:reduce){.live-dot{animation:none}}
+
 </style>
 </head>
 <body>
 <div class="announcement">• TRIPRASA CREATOR CIRCLE · LOCAL VOICES, SHARED OPPORTUNITY •</div>
 <header class="site-header"><div class="wrap nav"><a class="brand" href="index.html"><span class="logo" aria-hidden="true"><svg class="triprasa-mark" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M24 5C15 12 9 19 9 27a15 15 0 0 0 30 0C39 19 33 12 24 5Z" fill="currentColor"/><path d="M15 31c7-1 13-7 18-16M15 31c4 1 8 0 11-3" fill="none" stroke="#D8B36C" stroke-width="2.4" stroke-linecap="round"/><path d="M24 14v22" stroke="#D8B36C" stroke-width="1.8" stroke-linecap="round"/></svg></span><span>TRIPRASA</span></a><nav class="navlinks"><a href="index.html">Marketplace</a><a href="#how">How it works</a><a href="#businesses">For businesses</a><a href="#apply">Join the circle</a></nav><a class="btn gold" href="#apply">Become a creator ↗</a></div></header>
+<div class="livebar" aria-label="Live local time and preview status"><div class="wrap livebar-inner"><div class="live-label"><span class="live-dot" aria-hidden="true"></span><span>Creator Circle · live preview</span><span class="live-separator">·</span><span id="timeGreeting" class="time-greeting">Hello, explorer</span></div><div class="live-meta"><span id="liveDate">Loading date…</span><span class="live-separator">·</span><time id="liveClock" aria-label="Current time in India">Loading time…</time></div></div></div>
 <main>
 <section class="hero"><div class="wrap"><div class="hero-panel"><div class="hero-copy"><div class="eyebrow">A new chapter for local discovery</div><h1>Local voices.<br><em>Stories that move.</em></h1><p>Great local businesses deserve more than a listing. Triprasa Creator Circle is a proposed community where local storytellers, reviewers, photographers and video hosts help people discover the makers, shops, food and services around them—through honest content, short videos and live sessions.</p><div class="actions"><a class="btn gold" href="#apply">I’m a local creator ↗</a><a class="btn outline" href="#businesses">I run a business</a></div><p class="fine">Early concept and interest form. Creator profiles, paid collaborations, booking and livestream tools are not active yet.</p></div><div class="hero-art" role="img" aria-label="Abstract woven pattern in green, terracotta and gold"><div class="reel">▶</div><div class="art-caption">Real people. Real places.</div></div></div></div></section>
 <section class="section" id="why"><div class="wrap"><div class="section-head"><div class="eyebrow">Why join Triprasa?</div><h2>Make discovery feel human again.</h2><p class="muted">People trust useful local knowledge. Creators bring the personality; businesses bring the craft and service; the community gets a richer way to find and support what is nearby.</p></div><div class="grid"><article class="card"><div class="symbol">◉</div><h3>Build your local voice</h3><p>Show your perspective through neighbourhood guides, product walkthroughs, maker interviews, food stories and short-form videos. Start with the community you already know.</p></article><article class="card"><div class="symbol">↗</div><h3>Find collaboration opportunities</h3><p>Help local businesses tell their story. As the programme develops, collaborations may include agreed content briefs, campaign fees or other transparent arrangements—not guaranteed income.</p></article><article class="card"><div class="symbol">♡</div><h3>Help local businesses grow</h3><p>Give customers a better feel for the people and work behind a business. Disclose paid partnerships, share honest opinions and never promise results you cannot verify.</p></article></div></div></section>
@@ -178,5 +197,18 @@ footer{padding-top:42px}
 <script>
 const form=document.getElementById('interestForm'),notice=document.getElementById('formNotice'),toast=document.getElementById('toast');
 form.addEventListener('submit',e=>{e.preventDefault();const d=new FormData(form);const formats=[...form.querySelectorAll('input[name="formats"]:checked')].map(x=>x.value);const record={role:d.get('role'),name:d.get('name').trim(),area:d.get('area').trim(),contact:d.get('contact').trim(),formats,links:d.get('links').trim(),notes:d.get('notes').trim(),createdAt:new Date().toISOString(),storage:'local-browser-preview'};try{const key='triprasa-creator-circle-interest-preview';const all=JSON.parse(localStorage.getItem(key)||'[]');all.push(record);localStorage.setItem(key,JSON.stringify(all));notice.textContent='Interest preview saved in this browser only. No application was sent and no collaboration is booked.';notice.classList.add('show');form.reset();notice.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'nearest'});}catch(err){notice.textContent='This browser could not save the preview. Nothing was sent. Please try again.';notice.classList.add('show');}});
+
+function updateLiveTime(){
+ const now=new Date();
+ const timeNode=document.getElementById("liveClock");
+ const dateNode=document.getElementById("liveDate");
+ const greetingNode=document.getElementById("timeGreeting");
+ const fmt={timeZone:"Asia/Kolkata",hour:"2-digit",minute:"2-digit",second:"2-digit",hour12:true};
+ if(timeNode)timeNode.textContent=new Intl.DateTimeFormat("en-IN",fmt).format(now)+" IST";
+ if(dateNode)dateNode.textContent=new Intl.DateTimeFormat("en-IN",{timeZone:"Asia/Kolkata",weekday:"short",day:"numeric",month:"short"}).format(now);
+ if(greetingNode){const h=Number(new Intl.DateTimeFormat("en-IN",{timeZone:"Asia/Kolkata",hour:"2-digit",hour12:false}).format(now));greetingNode.textContent=h<12?"Good morning, explorer":h<17?"Good afternoon, explorer":h<21?"Good evening, explorer":"A quieter hour for discovery";}
+}
+updateLiveTime();setInterval(updateLiveTime,1000);
+
 </script>
 </body></html>
