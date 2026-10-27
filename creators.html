@@ -178,6 +178,76 @@ footer{padding-top:42px}
 @media(max-width:480px){.livebar-inner{gap:6px}.live-label{font-size:9px}.live-meta{font-size:10px;gap:7px}.live-count{align-items:flex-start;flex-direction:column}}
 @media(prefers-reduced-motion:reduce){.live-dot{animation:none}}
 
+
+/* Creator Circle responsive UX refinement */
+:root{--focus-ring:0 0 0 4px #d6ad6255}
+body{line-height:1.6;-webkit-font-smoothing:antialiased}
+button,input,select,textarea{min-height:44px}
+a,button{touch-action:manipulation}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.btn{min-height:46px;box-shadow:0 5px 14px #173d2b12}
+.btn:active{transform:scale(.985)}
+.nav{gap:clamp(10px,2vw,24px)}
+.brand{white-space:nowrap}
+.navlinks{align-items:center;flex-wrap:wrap}
+.navlinks a{padding:10px 0}
+.hero-panel{box-shadow:0 20px 55px #173d2b0c}
+.hero-copy p{line-height:1.8}
+.hero-art{background-position:center;background-size:cover}
+.section{scroll-margin-top:100px}
+.card,.idea{height:100%;border:1px solid #e4ddcf;transition:transform .2s,box-shadow .2s,border-color .2s}
+.card:hover,.idea:hover{transform:translateY(-3px);box-shadow:0 16px 35px #173d2b12;border-color:#c8d2c0}
+.grid{align-items:stretch}
+.creator-ideas{align-items:stretch}
+.formbox{box-shadow:0 18px 45px #173d2b0c}
+.formbox input,.formbox select,.formbox textarea{width:100%;border-radius:12px;padding:12px;min-height:46px}
+.formbox textarea{min-height:120px;resize:vertical}
+.livebar{position:relative}
+.livebar-inner{padding-top:9px;padding-bottom:9px}
+.footer-links a{display:inline-block;padding:5px 0}
+@media(max-width:760px){
+ .nav{min-height:66px}
+ .navlinks{gap:10px}
+ .hero-panel{grid-template-columns:1fr}
+ .hero-copy{padding:clamp(24px,6vw,40px)}
+ .hero-art{min-height:250px}
+ .grid{grid-template-columns:1fr 1fr}
+ .creator-ideas{grid-template-columns:1fr}
+ .section{padding:36px 0}
+}
+@media(max-width:520px){
+ .wrap{width:min(100% - 28px,1120px)}
+ .announcement{font-size:9px;line-height:1.5;padding:9px 10px}
+ .nav{min-height:62px}
+ .brand{font-size:14px;letter-spacing:.1em;gap:7px}
+ .logo{width:32px;height:32px}
+ .navlinks{display:none}
+ .nav>.btn{padding:10px 12px;font-size:10px;min-height:40px}
+ .livebar-inner{align-items:flex-start;flex-direction:column;gap:5px}
+ .live-label{flex-wrap:wrap;line-height:1.4}
+ .live-meta{font-size:10px}
+ .hero{padding-top:14px}
+ .hero-panel{border-radius:18px;overflow:hidden}
+ .hero h1{font-size:clamp(38px,11vw,52px);line-height:1.03;letter-spacing:-.04em}
+ .hero-copy p{font-size:13px;line-height:1.75}
+ .actions{display:grid;grid-template-columns:1fr}
+ .actions .btn{width:100%}
+ .hero-art{min-height:220px}
+ .section-head h2,.band h2{font-size:clamp(27px,7vw,35px);line-height:1.15}
+ .grid{grid-template-columns:1fr}
+ .card{padding:20px}
+ .creator-ideas{grid-template-columns:1fr}
+ .idea{min-height:0;padding:18px;gap:14px}
+ .band{padding:24px 20px;gap:18px}
+ .formbox{padding:16px;border-radius:18px}
+ .formbox .btn{width:100%}
+ .footer-links{gap:10px}
+}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+}
+
 </style>
 </head>
 <body>
