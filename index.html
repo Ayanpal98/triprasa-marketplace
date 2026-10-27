@@ -100,6 +100,64 @@ footer{margin-top:90px;background:#102f22;color:#f7f3e9}footer .footer-grid{padd
 .story-seal{border-radius:0;transform:rotate(-4deg);border:1px solid #e6bd68;background:#f4dfad;color:#163e2c;font-size:22px;line-height:1.2;padding:26px 32px;box-shadow:10px 10px 0 #b85b3f}
 @media(max-width:800px){.culture-ribbon{grid-template-columns:1fr 1fr}.culture-intro{grid-column:1/-1;border-bottom:1px solid #ffffff22}.culture-thread:nth-child(3){border-right:0}}
 @media(max-width:480px){.culture-intro,.culture-thread{padding:16px}.culture-intro>b{font-size:19px}.culture-thread{min-height:105px}.culture-thread b{font-size:11px}.category-art i{font-size:7px;left:10px}}
+
+/* Triprasa UI refinement — quiet glass surfaces, clearer interaction and responsive polish */
+:root{--glass:rgba(255,253,248,.72);--glass-line:rgba(255,255,255,.78);--glass-shadow:0 18px 48px rgba(24,61,44,.09)}
+::selection{background:#d8b36c66;color:var(--forest)}
+header{background:rgba(250,247,239,.78);backdrop-filter:blur(22px) saturate(145%);-webkit-backdrop-filter:blur(22px) saturate(145%);border-bottom-color:#ffffffb0;box-shadow:0 5px 24px #183d2c08}
+.logo{box-shadow:inset 0 1px 0 #ffffff38,0 5px 15px #183d2c1a}
+.btn,.iconbtn,.category,.product,.value,.maker-cta,.searchbox,.field input,.field select,.field textarea,.modal,.drawer{transition:background .22s ease,border-color .22s ease,box-shadow .22s ease,transform .22s ease}
+.iconbtn{background:rgba(255,253,248,.66);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-color:#ffffffd4;box-shadow:0 4px 14px #183d2c0a}
+.iconbtn:hover{background:#fff;border-color:#d8b36c;box-shadow:0 8px 22px #183d2c12;transform:translateY(-1px)}
+.btn{box-shadow:0 7px 18px #183d2c12}
+.btn.outline{background:rgba(255,253,248,.48);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.hero-panel{box-shadow:0 22px 60px #183d2c0c}
+.hero-art{isolation:isolate}
+.floating-note{background:rgba(255,253,240,.78);border-color:#ffffffbd;backdrop-filter:blur(18px) saturate(130%);-webkit-backdrop-filter:blur(18px) saturate(130%);box-shadow:0 16px 42px #102a1e28}
+.value{border-radius:16px;transition:background .2s,border-color .2s,transform .2s}
+.value:hover{background:rgba(255,255,255,.52);transform:translateY(-2px)}
+.category{overflow:hidden;background:rgba(255,253,248,.76);border-color:#ffffffd4;box-shadow:0 8px 26px #183d2c06}
+.category:hover{transform:translateY(-4px);box-shadow:var(--glass-shadow);border-color:#d8b36c99}
+.searchrow{position:relative;z-index:3}
+.searchbox{background:rgba(255,253,248,.78);border:1px solid #ffffffd9;box-shadow:0 10px 30px #183d2c08;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+.searchbox:focus-within{border-color:#d8b36c;box-shadow:0 0 0 4px #d8b36c25,0 12px 30px #183d2c0a}
+.product{background:rgba(255,253,248,.78);border-color:#ffffffd9;box-shadow:0 8px 24px #183d2c07;overflow:hidden}
+.product:hover{transform:translateY(-4px);border-color:#d8b36c88;box-shadow:0 18px 42px #183d2c12}
+.product-visual{overflow:hidden}
+.product-visual>*{transition:transform .45s cubic-bezier(.2,.75,.25,1)}
+.product:hover .product-visual>*{transform:scale(1.025)}
+.product-info{background:linear-gradient(180deg,rgba(255,253,248,.1),rgba(255,253,248,.72))}
+.product-tag{backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.maker-cta{border:1px solid #ffffff26;box-shadow:0 20px 50px #183d2c12}
+.maker-cta:hover{box-shadow:0 25px 60px #183d2c1c}
+.overlay,.modal-back{background:rgba(14,32,23,.42);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.drawer,.modal{background:rgba(255,253,248,.94);backdrop-filter:blur(24px) saturate(130%);-webkit-backdrop-filter:blur(24px) saturate(130%);border:1px solid #ffffffc9;box-shadow:0 30px 90px #102a1e35}
+.field input,.field select,.field textarea{background:rgba(255,255,255,.76);border:1px solid #dcded3;border-radius:12px}
+.field input:focus,.field select:focus,.field textarea:focus{outline:0;border-color:#9aab83;box-shadow:0 0 0 4px #9aab8328}
+.culture-ribbon{box-shadow:0 16px 36px #183d2c0c}
+.story-seal{box-shadow:7px 7px 0 #b85b3f}
+a,button{-webkit-tap-highlight-color:transparent}
+button:active,.btn:active{transform:scale(.985)}
+:focus-visible{outline:3px solid #d8b36c;outline-offset:4px;border-radius:8px}
+@media(max-width:800px){
+ .nav{gap:10px;min-height:68px}.navlinks{gap:14px}.navtools{gap:6px}.navtools .btn{padding:10px 13px}
+ .hero-panel{border-radius:22px}.values{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.value{border:0;background:#ffffff42}
+ .category-grid{gap:10px}.product-grid{gap:12px}
+}
+@media(max-width:560px){
+ .announcement{font-size:9px;letter-spacing:.08em;padding:9px 10px}
+ .nav{min-height:62px}.brand{font-size:16px;letter-spacing:.1em;gap:7px}.logo{width:33px;height:33px;border-radius:11px}
+ .navlinks{gap:12px;font-size:11px}.navlinks a:nth-child(n+3){display:none}.navtools .btn{display:none}.iconbtn{width:38px;height:38px}
+ .hero{padding-top:14px}.hero-panel{grid-template-columns:1fr;border-radius:20px}.hero-copy{padding:30px 25px 25px}.hero h1{font-size:clamp(43px,12vw,62px);margin:17px 0}.hero-copy p{font-size:13px}
+ .hero-art{min-height:310px}.sun{width:205px;height:205px;right:8%;top:7%}.art-ring{width:300px;height:300px}.woven{width:47%;max-width:230px;border-width:6px}.woven:after{font-size:62px}.floating-note{left:5%;bottom:14%;padding:10px 12px}
+ .values{padding:15px 0 28px}.value{padding:11px 8px;gap:8px}.value-icon{width:33px;height:33px;border-radius:10px}.value b{font-size:10px}.value small{font-size:9px}
+ .section{padding:20px 0 35px}.section-head{align-items:start;flex-direction:column;gap:8px;margin-bottom:17px}.section h2{font-size:34px}
+ .category-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+ .culture-ribbon{grid-template-columns:1fr 1fr}.culture-intro{grid-column:1/-1}.culture-thread{padding:13px;min-height:100px}
+ .drawer,.modal{max-width:calc(100vw - 24px);max-height:calc(100dvh - 24px);overflow:auto}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
 </style>
 </head>
 <body>
