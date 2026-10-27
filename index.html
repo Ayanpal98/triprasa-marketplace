@@ -443,6 +443,133 @@ footer{padding-top:48px}
 .category:hover .category-art span{transform:scale(1.04)}
 @media(max-width:600px){.hero-art{min-height:300px}.hero-art .floating-note{left:14px;bottom:14px}.hero-art .art-label{right:14px;bottom:20px;font-size:11px}}
 
+
+/* Product-quality UX refinement */
+:root{--focus-ring:0 0 0 4px #d8b36c55}
+html{scroll-padding-top:100px}
+body{line-height:1.55;-webkit-font-smoothing:antialiased}
+button,input,select,textarea{min-height:44px}
+button:disabled{opacity:.48;cursor:not-allowed}
+.btn{min-height:46px;box-shadow:0 5px 14px #183d2c12}
+.btn:active,.iconbtn:active,.pill:active{transform:scale(.98)}
+.nav{gap:clamp(10px,2vw,24px)}
+.brand{white-space:nowrap}
+.navlinks{align-items:center;flex-wrap:wrap}
+.navlinks a{padding:10px 0}
+.iconbtn{flex:0 0 auto}
+.hero{padding-bottom:clamp(20px,3vw,36px)}
+.hero-panel{box-shadow:0 20px 55px #183d2c0d}
+.hero-art{background-position:center 45%}
+.hero-art .sun,.hero-art .art-ring,.hero-art .woven{z-index:1}
+.hero-art .floating-note,.hero-art .art-label{z-index:2}
+.hero-art .woven{background-position:center;background-size:cover}
+.culture-ribbon{margin-top:12px}
+.category{border-radius:18px;overflow:hidden;transition:transform .2s,box-shadow .2s}
+.category:hover{transform:translateY(-3px);box-shadow:0 16px 35px #183d2c14}
+.category-art{height:180px}
+.category-art span{font-size:40px}
+.category-art i{display:block}
+.cat-text{min-height:116px}
+.discovery{box-shadow:0 18px 55px #253a2609}
+.pills{display:flex;gap:8px;flex-wrap:wrap}
+.pill{min-height:40px;padding:9px 15px;border-radius:99px;transition:background .2s,color .2s,border-color .2s}
+.pill:focus-visible,.btn:focus-visible,.iconbtn:focus-visible,.close:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.searchrow{gap:12px}
+.searchbox{min-height:50px;border-radius:14px;transition:border-color .2s,box-shadow .2s}
+.searchbox:focus-within{border-color:var(--forest2);box-shadow:var(--focus-ring)}
+.searchbox input{min-height:48px;outline:none}
+.searchrow select{min-height:50px;border-radius:14px;max-width:100%}
+.live-count{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin:14px 0 18px}
+.live-hint{font-size:10px;color:var(--muted)}
+.product-grid{align-items:stretch;gap:clamp(12px,1.8vw,22px)}
+.product{min-width:0;overflow:hidden;border:1px solid #e7e0d2;border-radius:18px;background:var(--paper);transition:transform .22s,box-shadow .22s,border-color .22s}
+.product:hover{transform:translateY(-4px);box-shadow:0 18px 35px #183d2c12;border-color:#c9d2c1}
+.product-visual{background-size:cover;background-position:center}
+.product-visual .emoji{font-size:clamp(34px,4vw,58px)}
+.product-info{display:flex;flex-direction:column;align-items:stretch;gap:7px}
+.product-info .product-desc{flex:1}
+.product-actions{display:flex;align-items:center;gap:8px;margin-top:8px}
+.product-actions .add{flex:1;min-height:42px}
+.product h3{line-height:1.3;overflow-wrap:anywhere}
+.product-desc{line-height:1.5}
+.wish{min-width:40px;min-height:40px}
+.story,.maker-cta{box-shadow:0 18px 45px #183d2c0a}
+.footer-grid a{display:inline-block;padding:4px 0}
+.drawer,.modal{overscroll-behavior:contain}
+.drawer{width:min(440px,100vw);padding:clamp(20px,4vw,30px)}
+.modal-back{padding:16px;overscroll-behavior:contain}
+.modal{width:min(560px,100%);max-height:min(88dvh,850px);overflow:auto;border-radius:22px;padding:clamp(20px,4vw,30px)}
+.product-detail-modal{width:min(820px,100%)}
+.field input,.field select,.field textarea{width:100%;min-height:46px;border-radius:12px;padding:12px}
+.field textarea{min-height:110px;resize:vertical}
+.toast{max-width:min(420px,calc(100vw - 28px));}
+#dbStatus{max-width:calc(100vw - 24px);white-space:normal;line-height:1.4}
+@media(max-width:900px){
+ .navlinks{gap:12px}
+ .hero-panel{grid-template-columns:1fr 1fr}
+ .hero-art{min-height:340px}
+ .category-grid,.product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .category-art{height:155px}
+ .product-visual .emoji{font-size:48px}
+}
+@media(max-width:600px){
+ .wrap{width:min(100% - 28px,1180px)}
+ .announcement{padding:9px 10px;line-height:1.5}
+ .nav{min-height:64px}
+ .navtools .btn{min-height:40px}
+ .hero-panel{grid-template-columns:minmax(0,1fr);border-radius:20px}
+ .hero-copy{padding:30px 22px 25px}
+ .hero h1{font-size:clamp(42px,12vw,54px);line-height:1.02;letter-spacing:-.045em}
+ .hero-copy p{font-size:14px;line-height:1.75}
+ .hero-art{min-height:290px;background-position:center}
+ .category-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+ .category-art{height:clamp(110px,35vw,150px)}
+ .category-art span{font-size:34px}
+ .category-art i{font-size:8px;left:13px;bottom:12px}
+ .cat-text{padding:12px;min-height:102px}
+ .cat-text b{font-size:16px;line-height:1.25}
+ .discovery{padding:15px;border-radius:18px}
+ .pills{flex-wrap:nowrap;overflow-x:auto;padding:2px 2px 8px;margin-right:-2px;scrollbar-width:thin}
+ .pill{flex:0 0 auto;white-space:nowrap}
+ .searchrow{display:grid;grid-template-columns:1fr;gap:10px}
+ .searchbox,.searchrow select{width:100%;min-width:0}
+ .live-count{align-items:flex-start;flex-direction:column;gap:5px}
+ .product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+ .product{border-radius:14px}
+ .product-visual{aspect-ratio:4/4.5}
+ .product-visual .emoji{font-size:clamp(30px,10vw,48px)}
+ .product-info{padding:10px;gap:6px}
+ .product h3{font-size:14px;line-height:1.35}
+ .product-desc{font-size:11px;line-height:1.45}
+ .product-actions{gap:6px}
+ .product-actions .add{min-height:40px;font-size:11px;padding:8px}
+ .wish{min-width:38px;min-height:38px}
+ .price{font-size:12px}
+ .product-tag{max-width:calc(100% - 54px);white-space:normal;line-height:1.3}
+ .section-head h2,.discovery h2{font-size:clamp(27px,7vw,36px);line-height:1.12}
+ .story{overflow:hidden;border-radius:18px}
+ .modal-back{padding:10px;align-items:flex-end}
+ .modal{border-radius:20px 20px 12px 12px;max-height:90dvh;padding:20px}
+ .drawer{padding:22px 18px}
+ #dbStatus{bottom:8px;left:8px;font-size:9px;padding:6px 9px}
+}
+@media(max-width:360px){
+ .brand{font-size:13px;letter-spacing:.08em;gap:7px}
+ .logo{width:30px;height:30px}
+ .navtools{gap:4px}
+ .navtools .btn{padding:8px 9px;font-size:9px}
+ .iconbtn{width:35px;height:35px}
+ .hero-actions{display:grid;grid-template-columns:1fr}
+ .hero-actions .btn{width:100%}
+ .product-grid{gap:8px}
+ .product-info{padding:8px}
+ .product h3{font-size:13px}
+}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+}
+
 </style>
 </head>
 <body>
@@ -452,7 +579,7 @@ footer{padding-top:48px}
 <div class="livebar" aria-label="Live local time and preview status"><div class="wrap livebar-inner"><div class="live-label"><span class="live-dot" aria-hidden="true"></span><span>Live local preview</span><span class="live-separator">·</span><span id="timeGreeting" class="time-greeting">Hello, explorer</span></div><div class="live-meta"><span id="liveDate">Loading date…</span><span class="live-separator">·</span><time id="liveClock" aria-label="Current time in India">Loading time…</time></div></div></div>
 <main id="main">
 <div class="wrap">
-<section class="hero"><div class="hero-panel"><div class="hero-copy"><div class="eyebrow">Tripura, woven into every story</div><h1>Made of<br><em>many stories.</em></h1><p>From the colours of risa and rignai to bamboo-and-cane craft and the living voices of Kokborok, Triprasa is imagined as a home for Tripura’s makers—told in their own words, on their own terms.</p><div class="hero-actions"><a class="btn gold" href="#collection">Explore the collection <span>↗</span></a><a class="btn outline" href="#story">Meet the idea</a></div><div class="microproof"><div class="avatarstack" aria-hidden="true"><span>✿</span><span>⌂</span><span>•</span></div><span><b>Made with care.</b> Built around local makers.</span></div></div><div class="hero-art" role="img" aria-label="Abstract woven textile-inspired art in warm terracotta, green and gold"><div class="sun"></div><div class="art-ring"></div><div class="woven"></div><div class="floating-note"><b>Rooted in place.</b><span>Open to possibility ↗</span></div><div class="art-label">Risa · Rignai · Ri · Reang</div></div></div></section>
+<section class="hero"><div class="hero-panel"><div class="hero-copy"><div class="eyebrow">Tripura, woven into every story</div><h1>Made of<br><em>many stories.</em></h1><p>From the colours of risa and rignai to bamboo-and-cane craft and the living voices of Kokborok, Triprasa is imagined as a home for Tripura’s makers—told in their own words, on their own terms.</p><div class="hero-actions"><a class="btn gold" href="#collection">Explore the collection <span>↗</span></a><a class="btn outline" href="#story">Meet the idea</a></div><div class="microproof"><div class="avatarstack" aria-hidden="true"><span>✿</span><span>⌂</span><span>•</span></div><span><b>Made with care.</b> Built around local makers.</span></div></div><div class="hero-art" role="img" aria-label="Editorial textile-inspired photograph with warm natural tones"><div class="sun"></div><div class="art-ring"></div><div class="woven"></div><div class="floating-note"><b>Rooted in place.</b><span>Open to possibility ↗</span></div><div class="art-label">Risa · Rignai · Ri · Reang</div></div></div></section>
 <div class="culture-ribbon" aria-label="Cultural inspirations from Tripura"><div class="culture-intro"><span class="eyebrow">Inspired by Tripura</span><b>Culture is not a backdrop.<br>It belongs to its people.</b></div><div class="culture-thread"><span class="thread-symbol">▥</span><b>Risa & Rignai</b><small>Handwoven identity</small></div><div class="culture-thread"><span class="thread-symbol">⌁</span><b>Bamboo & cane</b><small>Skill shaped by place</small></div><div class="culture-thread"><span class="thread-symbol">◌</span><b>Kokborok & more</b><small>Stories in local voices</small></div></div><div class="values"><div class="value"><span class="value-icon">•</span><div><b>Maker-first</b><small>People behind each piece</small></div></div><div class="value"><span class="value-icon">⌂</span><div><b>Rooted locally</b><small>Inspired by Tripura</small></div></div><div class="value"><span class="value-icon">♡</span><div><b>Culture with care</b><small>Consent and attribution</small></div></div><div class="value"><span class="value-icon">↗</span><div><b>Ready to grow</b><small>Local pilot before scale</small></div></div></div>
 <section class="section" id="categories"><div class="section-head"><div><div class="eyebrow">Explore the living craft of Tripura</div><h2>From loom to everyday life.</h2><p class="muted">A future collection shaped with local artisans and producers—from handloom and bamboo craft to pantry traditions. These are sample categories, not verified seller listings.</p></div><a class="textlink" href="#collection">Explore all samples ↗</a></div><div class="category-grid"><button class="category" data-category="Textiles"><div class="category-art cat-1"><span>▥</span><i>01 / HANDLOOM</i></div><div class="cat-text"><b>Risa, Rignai & textiles</b><small>Colour, pattern and identity ↗</small></div></button><button class="category" data-category="Home"><div class="category-art cat-2"><span>⌁</span><i>02 / MATERIAL</i></div><div class="cat-text"><b>Bamboo & cane</b><small>Everyday forms, made by hand ↗</small></div></button><button class="category" data-category="Food"><div class="category-art cat-3"><span>❋</span><i>03 / PANTRY</i></div><div class="cat-text"><b>Local food & pantry</b><small>Producers, ingredients, place ↗</small></div></button><button class="category" data-category="Craft"><div class="category-art cat-4"><span>•</span><i>04 / MAKERS</i></div><div class="cat-text"><b>Craft & living traditions</b><small>Made by people, credited by name ↗</small></div></button></div></section>
 <section class="section" id="collection"><div class="discovery"><div class="section-head"><div><div class="eyebrow">The discovery shelf</div><h2>Meet your next favourite</h2><p class="muted">Explore a sample collection inspired by local craft, home and everyday culture. These interface examples are fictional—not active listings.</p></div><a class="textlink" href="#makers">Become a maker ↗</a></div><div class="pills" aria-label="Filter sample products"><button class="pill active" data-filter="All">Everything</button><button class="pill" data-filter="Textiles">Textiles</button><button class="pill" data-filter="Home">Home & living</button><button class="pill" data-filter="Food">Food & pantry</button><button class="pill" data-filter="Craft">Art & craft</button></div><div class="searchrow"><label class="searchbox"><span>⌕</span><input type="search" id="searchInput" placeholder="Search textiles, home, craft…" aria-label="Search sample products"></label><select id="sortSelect" aria-label="Sort sample products"><option value="featured">Sort: Featured</option><option value="az">Name: A to Z</option><option value="priceAsc">Price: Low to high (demo)</option><option value="priceDesc">Price: High to low (demo)</option></select></div><div class="live-count" aria-live="polite"><strong id="resultCount">Loading sample shelf…</strong><span class="live-hint"><span>LIVE UI</span> Filters and basket update instantly in this browser</span></div><div class="product-grid" id="products" aria-live="polite"></div><p class="disclaimer">Demo notice: all sample product names, maker labels, descriptions and displayed prices are fictional placeholders for interface testing. No stock, seller identity, provenance, availability or purchase offer is represented.</p></div></section>
