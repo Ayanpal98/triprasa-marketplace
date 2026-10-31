@@ -816,27 +816,207 @@ button:disabled{cursor:not-allowed;opacity:.6}
 @media(max-width:360px){.product-grid,.category-grid{grid-template-columns:minmax(0,1fr)}}
 @media(prefers-reduced-motion:reduce){.woven,.live-dot{animation:none!important}}
 @media(hover:none){.quick-view{opacity:1;transform:none}}
+
+/* Triprasa quick-commerce direction: original brand, fast discovery patterns */
+:root{--qc-green:#285040;--qc-deep:#1c301f;--qc-gold:#d9a43b;--qc-cream:#f7f6f2;--qc-line:#e7e8e1;--qc-muted:#70786f}
+body{background:#f7f8f5;color:#1f2a22;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+.announcement{background:#1c301f;color:#f7f6f2;padding:8px 12px;font-size:10px;letter-spacing:.04em;text-transform:none}
+header{background:#fff;box-shadow:0 2px 14px #1b30200b;border-bottom:1px solid #edf0e9}
+.nav{min-height:72px;gap:18px}
+.brand{font-size:20px;letter-spacing:.1em}
+.logo{background:#285040;color:#d9a43b;border-radius:12px}
+.navlinks{display:none}
+.navtools{gap:8px}
+.navtools .btn{border-radius:12px}
+.iconbtn{border-radius:12px;background:#f7f8f5;border-color:#e8ebe5}
+.qc-top{background:#fff;padding:15px 0 13px;border-bottom:1px solid #edf0e9}
+.qc-top-inner{display:grid;grid-template-columns:minmax(210px,1fr) minmax(260px,1.7fr) auto;align-items:center;gap:18px}
+.qc-location{display:flex;align-items:center;gap:10px;min-width:0}
+.qc-location-icon{width:38px;height:38px;border-radius:12px;background:#edf3e9;display:grid;place-items:center;color:#285040;font-size:18px;flex:0 0 auto}
+.qc-location small{display:block;font-size:10px;color:#7a8178}
+.qc-location strong{display:block;font-size:13px;color:#1c301f;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:190px}
+.qc-location input{border:0;border-bottom:1px dashed #a9b6a5;background:transparent;width:min(190px,100%);padding:3px 0;color:#285040;font-size:12px;outline:none}
+.qc-search{display:flex;align-items:center;gap:9px;background:#f4f6f2;border:1px solid #e9ede6;border-radius:13px;padding:0 14px;min-width:0}
+.qc-search span{font-size:19px;color:#667366}
+.qc-search input{width:100%;min-width:0;border:0;outline:none;background:transparent;padding:13px 0;font-size:13px;color:#1c301f}
+.qc-support{font-size:11px;color:#657165;white-space:nowrap}
+.qc-main{padding-bottom:65px}
+.qc-hero{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;margin:22px 0 24px}
+.qc-hero-copy{background:#eaf0e6;border-radius:20px;padding:clamp(24px,4vw,44px);min-width:0;position:relative;overflow:hidden}
+.qc-kicker{font-size:10px;font-weight:850;letter-spacing:.12em;text-transform:uppercase;color:#6b7e5d}
+.qc-hero h1{font:600 clamp(32px,4.4vw,52px)/1.04 Georgia,serif;letter-spacing:-.045em;color:#1c301f;margin:13px 0 10px;max-width:540px}
+.qc-hero h1 em{color:#b36b42;font-style:normal}
+.qc-hero p{font-size:13px;line-height:1.75;color:#5c6b5b;max-width:480px;margin:0}
+.qc-hero-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:20px}
+.qc-hero .btn{border-radius:11px;min-height:43px}
+.qc-hero-art{min-height:245px;border-radius:20px;overflow:hidden;position:relative;background:linear-gradient(135deg,#d9e3d3,#a8b99d)}
+.qc-hero-art img{width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0}
+.qc-art-label{position:absolute;left:15px;bottom:15px;padding:9px 12px;border-radius:10px;background:#fffdf0ed;color:#285040;font-size:11px;font-weight:800}
+.qc-hero-note{position:absolute;right:14px;top:14px;background:#1c301fe8;color:#fff;padding:9px 11px;border-radius:10px;font-size:10px}
+.qc-section{margin:26px 0}
+.qc-section-head{display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:14px}
+.qc-section-head h2{font:600 25px/1.1 Georgia,serif;color:#1c301f;letter-spacing:-.03em;margin:0}
+.qc-section-head p{font-size:11px;color:#7b8379;margin:6px 0 0}
+.qc-categories{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px}
+.qc-cat{border:1px solid #e9ece6;background:#fff;border-radius:15px;padding:13px 8px 12px;text-align:center;min-width:0;transition:.18s}
+.qc-cat:hover,.qc-cat:focus-visible{border-color:#a8b99d;transform:translateY(-2px);box-shadow:0 10px 24px #1c301f0c}
+.qc-cat-art{width:58px;height:58px;margin:0 auto 9px;border-radius:18px;background:#eef3ea;display:grid;place-items:center;font-size:27px}
+.qc-cat:nth-child(2n) .qc-cat-art{background:#f5efe2}
+.qc-cat strong{display:block;font-size:11px;line-height:1.3;color:#314638}
+.qc-cat small{display:block;color:#92998f;font-size:9px;margin-top:4px}
+.qc-promo{display:flex;align-items:center;justify-content:space-between;gap:16px;background:#1c301f;color:#f7f6f2;border-radius:17px;padding:18px 22px;margin:24px 0}
+.qc-promo strong{font:500 21px Georgia,serif}
+.qc-promo span{display:block;font-size:11px;color:#d4dfd1;margin-top:4px}
+.qc-promo .qc-promo-tag{background:#d9a43b;color:#1c301f;border-radius:9px;padding:9px 12px;font-size:10px;font-weight:850;white-space:nowrap}
+.qc-shop{background:#fff;border:1px solid #ecefe9;border-radius:18px;padding:20px}
+.qc-shop .discovery{padding:0;background:transparent;border:0;box-shadow:none;margin:0}
+.qc-shop .section-head{margin-bottom:14px}
+.qc-shop .section-head h2{font:600 26px Georgia,serif}
+.qc-shop .pills{flex-wrap:nowrap;overflow-x:auto;padding:4px 0 10px;margin:13px 0}
+.qc-shop .pill{background:#f3f5f1;border:1px solid #e9ede6;color:#536451;border-radius:9px;white-space:nowrap}
+.qc-shop .pill.active,.qc-shop .pill:hover{background:#285040;border-color:#285040;color:white}
+.qc-shop .searchrow{display:grid;grid-template-columns:minmax(0,1fr) 175px;gap:10px;margin-bottom:12px}
+.qc-shop .searchbox{display:flex;align-items:center;background:#f7f8f5;border:1px solid #e9ede6;border-radius:10px;padding:0 12px}
+.qc-shop .searchbox input{background:transparent;border:0;padding:12px 4px;min-height:44px}
+.qc-shop .searchrow select{border-radius:10px;background:#f7f8f5;border:1px solid #e9ede6}
+.qc-shop .live-count{border:0;background:#f7f8f5;margin:10px 0 14px;padding:10px 12px;border-radius:9px}
+.qc-shop .live-count .live-hint{font-size:9px}
+.qc-shop .product-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}
+.qc-shop .product{border:1px solid #edf0ea;border-radius:13px;box-shadow:none;transition:box-shadow .18s,border-color .18s}
+.qc-shop .product:hover{transform:none;box-shadow:0 8px 22px #1c301f0b;border-color:#cdd8c8}
+.qc-shop .product-visual{aspect-ratio:1/1;background-color:#edf1e9}
+.qc-shop .product-tag{background:#fff;color:#536451;font-size:8px;letter-spacing:.02em}
+.qc-shop .product-info{padding:12px}
+.qc-shop .maker{font-size:8px;color:#818a7f}
+.qc-shop .product h3{font:650 13px/1.35 Inter,system-ui,sans-serif;color:#273c2d;min-height:35px}
+.qc-shop .product-desc{font-size:10px;line-height:1.45;min-height:56px}
+.qc-shop .product-bottom{align-items:center}
+.qc-shop .price{font-size:10px;color:#6e796b;font-weight:700}
+.qc-shop .price small{display:block;font-size:8px;margin-top:2px}
+.qc-shop .add{border-radius:9px;width:auto;min-width:68px;height:34px;padding:0 10px;background:#fff;border:1px solid #285040;color:#285040;font-size:11px;font-weight:850}
+.qc-shop .add:hover{background:#285040;color:white}
+.qc-shop .quick-view{opacity:1;transform:none;position:absolute;bottom:10px;left:50%;translate:-50% 0}
+.qc-shop .disclaimer{background:#fbf7eb;border:1px solid #f0e6ca;padding:11px 13px;border-radius:9px;margin-top:16px}
+.qc-trust{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:25px 0}
+.qc-trust-card{background:#fff;border:1px solid #ecefe9;border-radius:13px;padding:15px;display:flex;gap:10px;align-items:center}
+.qc-trust-icon{width:38px;height:38px;border-radius:11px;background:#edf3e9;display:grid;place-items:center;flex:0 0 auto;font-size:18px}
+.qc-trust-card strong{display:block;font-size:11px;color:#314638}
+.qc-trust-card small{display:block;font-size:9px;color:#858e82;margin-top:3px}
+.qc-story{display:grid;grid-template-columns:.8fr 1.2fr;gap:20px;background:#f0f3ed;border-radius:18px;overflow:hidden;margin:26px 0}
+.qc-story-art{min-height:240px;background:linear-gradient(135deg,#d9e4d5,#9eae93);display:grid;place-items:center;font-size:72px}
+.qc-story-copy{padding:clamp(20px,3vw,34px);align-self:center}
+.qc-story-copy h2{font:500 27px Georgia,serif;color:#1c301f;margin:8px 0}
+.qc-story-copy p{font-size:11px;line-height:1.8;color:#657164}
+.qc-maker{display:flex;align-items:center;justify-content:space-between;gap:18px;background:#1c301f;color:#fff;border-radius:17px;padding:24px}
+.qc-maker h2{font:500 25px Georgia,serif;margin:0 0 7px}
+.qc-maker p{font-size:11px;line-height:1.7;color:#d1ddcf;margin:0;max-width:650px}
+.qc-maker .btn{background:#d9a43b;color:#1c301f;border-color:#d9a43b;border-radius:10px;white-space:nowrap}
+footer{background:#172b1e;margin-top:28px}
+.footer-grid{grid-template-columns:2fr 1fr 1fr}
+.qc-bottom-cart{display:none}
+.qc-location-note{font-size:9px;color:#9aa397;margin-top:2px}
+.qc-modal-note{font-size:10px;color:#838b80;line-height:1.6}
+@media(max-width:900px){
+ .qc-top-inner{grid-template-columns:minmax(0,1fr) minmax(0,1.5fr)}
+ .qc-support{display:none}
+ .qc-categories{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .qc-shop .product-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:650px){
+ .nav{min-height:60px}
+ .navtools .btn{display:none}
+ .qc-top{padding:10px 0}
+ .qc-top-inner{grid-template-columns:1fr;gap:9px}
+ .qc-location{gap:8px}
+ .qc-location strong{max-width:none}
+ .qc-location input{width:100%;max-width:100%}
+ .qc-search{grid-row:2}
+ .qc-hero{grid-template-columns:1fr;gap:10px;margin:14px 0 18px}
+ .qc-hero-copy{padding:22px 19px;border-radius:15px}
+ .qc-hero h1{font-size:36px;max-width:360px}
+ .qc-hero p{font-size:12px}
+ .qc-hero-art{min-height:155px;border-radius:15px}
+ .qc-section{margin:20px 0}
+ .qc-section-head h2{font-size:22px}
+ .qc-categories{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+ .qc-cat{padding:10px 5px;border-radius:12px}
+ .qc-cat-art{width:48px;height:48px;border-radius:14px;font-size:23px}
+ .qc-cat strong{font-size:10px}
+ .qc-promo{padding:15px;border-radius:13px;margin:18px 0}
+ .qc-promo strong{font-size:17px}
+ .qc-promo span{font-size:9px}
+ .qc-promo .qc-promo-tag{font-size:9px;padding:8px}
+ .qc-shop{padding:12px;border-radius:14px}
+ .qc-shop .section-head{display:block}
+ .qc-shop .section-head .textlink{display:inline-block;margin-top:8px}
+ .qc-shop .searchrow{grid-template-columns:1fr}
+ .qc-shop .product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+ .qc-shop .product-info{padding:9px}
+ .qc-shop .product h3{font-size:12px;min-height:32px}
+ .qc-shop .product-desc{font-size:9px;min-height:54px}
+ .qc-shop .product-bottom{gap:5px}
+ .qc-shop .price{font-size:9px}
+ .qc-shop .add{min-width:58px;height:32px;padding:0 7px}
+ .qc-trust{grid-template-columns:1fr;gap:8px}
+ .qc-trust-card{padding:11px}
+ .qc-story{grid-template-columns:1fr;gap:0}
+ .qc-story-art{min-height:130px;font-size:52px}
+ .qc-maker{align-items:flex-start;flex-direction:column;padding:19px}
+ .qc-maker .btn{white-space:normal}
+ .footer-grid{grid-template-columns:1fr 1fr}
+ .footer-grid>div:first-child{grid-column:1/-1}
+ .qc-bottom-cart{display:flex;position:fixed;z-index:45;left:12px;right:12px;bottom:12px;align-items:center;justify-content:space-between;gap:12px;padding:11px 14px;background:#1c301f;color:white;border-radius:13px;box-shadow:0 12px 30px #10201640}
+ .qc-bottom-cart button{border:0;background:#d9a43b;color:#1c301f;border-radius:9px;padding:9px 14px;font-size:11px;font-weight:850}
+}
+@media(max-width:360px){.qc-categories{grid-template-columns:repeat(2,minmax(0,1fr))}.qc-shop .product-grid{gap:7px}.qc-shop .product-desc{min-height:68px}}
+@media(prefers-reduced-motion:reduce){.qc-cat,.qc-shop .product{transition:none}}
+
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<div class="announcement"><span>•</span> A new way to discover local stories <span>•</span> &nbsp; Concept preview · sample catalogue only</div>
-<header><div class="wrap nav"><a class="brand" href="#" aria-label="Triprasa home"><span class="logo" aria-hidden="true"><svg class="triprasa-mark" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M24 5C15 12 9 19 9 27a15 15 0 0 0 30 0C39 19 33 12 24 5Z" fill="currentColor"/><path d="M15 31c7-1 13-7 18-16M15 31c4 1 8 0 11-3" fill="none" stroke="#D8B36C" stroke-width="2.4" stroke-linecap="round"/><path d="M24 14v22" stroke="#D8B36C" stroke-width="1.8" stroke-linecap="round"/></svg></span><span>TRIPRASA</span></a><nav class="navlinks" aria-label="Main navigation"><a href="#categories">Discover</a><a href="#collection">Shop samples</a><a href="#story">Our approach</a><a href="#makers">For makers</a><a href="creators.html">Creator Circle</a></nav><div class="navtools"><button class="iconbtn" id="wishlistJump" aria-label="Show saved sample items">♡</button><button class="iconbtn" id="openCart" aria-label="Open demo basket">♧<span class="count" id="cartCount">0</span></button><button class="btn small" id="openMaker">Join as a maker ↗</button></div></div></header>
-<div class="livebar" aria-label="Live local time and preview status"><div class="wrap livebar-inner"><div class="live-label"><span class="live-dot" aria-hidden="true"></span><span>Live local preview</span><span class="live-separator">·</span><span id="timeGreeting" class="time-greeting">Hello, explorer</span></div><div class="live-meta"><span id="liveDate">Loading date…</span><span class="live-separator">·</span><time id="liveClock" aria-label="Current time in India">Loading time…</time></div></div></div>
-<main id="main">
-<div class="wrap">
-<section class="hero"><div class="hero-panel"><div class="hero-copy"><div class="eyebrow">Tripura, woven into every story</div><h1>Made of<br><em>many stories.</em></h1><p>From the colours of risa and rignai to bamboo-and-cane craft and the living voices of Kokborok, Triprasa is imagined as a home for Tripura’s makers—told in their own words, on their own terms.</p><div class="hero-actions"><a class="btn gold" href="#collection">Explore the collection <span>↗</span></a><a class="btn outline" href="#story">Meet the idea</a></div><div class="microproof"><div class="avatarstack" aria-hidden="true"><span>✿</span><span>⌂</span><span>•</span></div><span><b>Made with care.</b> Built around local makers.</span></div></div><div class="hero-art" role="img" aria-label="Editorial textile-inspired photograph with warm natural tones"><div class="sun"></div><div class="art-ring"></div><div class="woven"></div><div class="floating-note"><b>Rooted in place.</b><span>Open to possibility ↗</span></div><div class="art-label">Risa · Rignai · Ri · Reang</div></div></div></section>
-<div class="culture-ribbon" aria-label="Cultural inspirations from Tripura"><div class="culture-intro"><span class="eyebrow">Inspired by Tripura</span><b>Culture is not a backdrop.<br>It belongs to its people.</b></div><div class="culture-thread"><span class="thread-symbol">▥</span><b>Risa & Rignai</b><small>Handwoven identity</small></div><div class="culture-thread"><span class="thread-symbol">⌁</span><b>Bamboo & cane</b><small>Skill shaped by place</small></div><div class="culture-thread"><span class="thread-symbol">◌</span><b>Kokborok & more</b><small>Stories in local voices</small></div></div><div class="values"><div class="value"><span class="value-icon">•</span><div><b>Maker-first</b><small>People behind each piece</small></div></div><div class="value"><span class="value-icon">⌂</span><div><b>Rooted locally</b><small>Inspired by Tripura</small></div></div><div class="value"><span class="value-icon">♡</span><div><b>Culture with care</b><small>Consent and attribution</small></div></div><div class="value"><span class="value-icon">↗</span><div><b>Ready to grow</b><small>Local pilot before scale</small></div></div></div>
-<section class="section" id="categories"><div class="section-head"><div><div class="eyebrow">Explore the living craft of Tripura</div><h2>From loom to everyday life.</h2><p class="muted">A future collection shaped with local artisans and producers—from handloom and bamboo craft to pantry traditions. These are sample categories, not verified seller listings.</p></div><a class="textlink" href="#collection">Explore all samples ↗</a></div><div class="category-grid"><button class="category" data-category="Textiles"><div class="category-art cat-1"><span>▥</span><i>01 / HANDLOOM</i></div><div class="cat-text"><b>Risa, Rignai & textiles</b><small>Colour, pattern and identity ↗</small></div></button><button class="category" data-category="Home"><div class="category-art cat-2"><span>⌁</span><i>02 / MATERIAL</i></div><div class="cat-text"><b>Bamboo & cane</b><small>Everyday forms, made by hand ↗</small></div></button><button class="category" data-category="Food"><div class="category-art cat-3"><span>❋</span><i>03 / PANTRY</i></div><div class="cat-text"><b>Local food & pantry</b><small>Producers, ingredients, place ↗</small></div></button><button class="category" data-category="Craft"><div class="category-art cat-4"><span>•</span><i>04 / MAKERS</i></div><div class="cat-text"><b>Craft & living traditions</b><small>Made by people, credited by name ↗</small></div></button></div></section>
-<section class="section" id="collection"><div class="discovery"><div class="section-head"><div><div class="eyebrow">The discovery shelf</div><h2>Meet your next favourite</h2><p class="muted">Explore Tripura’s regional products, including Risa and Pachra-Rignai textiles, bamboo crafts, Queen Pineapple and Unakoti tea. Individual seller listings are still being verified.</p></div><a class="textlink" href="#makers">Become a maker ↗</a></div><div class="pills" aria-label="Filter sample products"><button class="pill active" data-filter="All">Everything</button><button class="pill" data-filter="Textiles">Textiles</button><button class="pill" data-filter="Home">Home & living</button><button class="pill" data-filter="Food">Food & pantry</button><button class="pill" data-filter="Craft">Art & craft</button></div><div class="searchrow"><label class="searchbox"><span>⌕</span><input type="search" id="searchInput" placeholder="Search textiles, home, craft…" aria-label="Search sample products"></label><select id="sortSelect" aria-label="Sort sample products"><option value="featured">Sort: Featured</option><option value="az">Name: A to Z</option><option value="za">Name: Z to A</option></select></div><div class="live-count" aria-live="polite"><strong id="resultCount">Loading sample shelf…</strong><span class="live-hint"><span>LIVE UI</span> Filters and basket update instantly in this browser</span></div><div class="product-grid" id="products" aria-live="polite"></div><p class="disclaimer">Catalogue status: these are category previews, not verified individual listings. Current visuals are illustrative stock imagery, not photographs of listed Tripura products. Seller identity, item-specific photos, specifications, stock and prices must be confirmed before any purchase is enabled.</p></div></section>
-<section class="section" id="story"><div class="story"><div class="story-art" role="img" aria-label="Decorative geometric textile-inspired artwork"><div class="story-seal">Rooted<br>in Tripura<br>•</div></div><div class="story-copy"><div class="eyebrow">A marketplace that listens first</div><h2>Culture lives with the people who carry it.</h2><p>Tripura’s communities are not one single story. Triprasa is imagined as a place where weavers, bamboo and cane artisans, growers, food producers and independent makers can introduce their work in their own words—with the context they choose to share.</p><p>We will not label a design as “traditional” without maker input, flatten distinct communities into one aesthetic, or publish cultural stories without consent. Credit, fair representation and control stay with the people behind the work.</p><div class="principles"><div class="principle"><span>•</span><span>Consent and attribution before publishing</span></div><div class="principle"><span>•</span><span>Clear costs and seller economics</span></div><div class="principle"><span>•</span><span>Accurate product information</span></div><div class="principle"><span>•</span><span>Community-led, measured growth</span></div></div><a class="textlink" href="#makers">Help shape the pilot ↗</a></div></div></section>
-<section class="section" id="creator-circle"><div class="creator-feature"><div class="creator-feature-art" aria-hidden="true"><span class="creator-orbit orbit-one"></span><span class="creator-orbit orbit-two"></span><span class="creator-seal">•</span><span class="creator-art-label">LOCAL VOICES · SHARED STORIES</span></div><div class="creator-feature-copy"><div class="eyebrow">More than a marketplace</div><h2>Discovery begins with a human story.</h2><p class="muted">Meet the proposed Triprasa Creator Circle: local reviewers, photographers and video storytellers helping people discover the makers and small businesses behind the things they love.</p><div class="creator-benefits"><span>↗ Honest creator vouches</span><span>▶ Short videos and maker stories</span><span>◉ Future live business sessions</span></div><div class="creator-feature-actions"><a class="btn" href="creators.html">Explore Creator Circle ↗</a><a class="textlink" href="creators.html#businesses">For local businesses</a></div><p class="creator-disclosure">Early concept only. Creator matching, paid collaborations and livestreaming are not active yet.</p></div></div></section><section class="section" id="makers"><div class="maker-cta"><div><div class="eyebrow">Built with Tripura’s makers, not just about them</div><h2>Your craft. Your name. Your story.</h2><p>Are you a weaver, bamboo or cane artisan, food producer, farmer, craft collective or small local business? Help shape a marketplace where makers control how their work is described, credited and introduced to new customers.</p></div><button class="btn gold" id="openMaker2">Tell us about your work ↗</button></div></section>
+<div class="announcement">Tripura-rooted discoveries · A community-first marketplace preview</div>
+<header><div class="wrap nav">
+<a class="brand" href="#" aria-label="Triprasa home"><span class="logo" aria-hidden="true"><svg class="triprasa-mark" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 5C15 12 9 19 9 27a15 15 0 0 0 30 0C39 19 33 12 24 5Z" fill="currentColor"/><path d="M15 31c7-1 13-7 18-16M15 31c4 1 8 0 11-3" fill="none" stroke="#D9A43B" stroke-width="2.4" stroke-linecap="round"/><path d="M24 14v22" stroke="#D9A43B" stroke-width="1.8" stroke-linecap="round"/></svg></span><span>TRIPRASA</span></a>
+<nav class="navlinks" aria-label="Main navigation"><a href="#categories">Categories</a><a href="#collection">Shop</a><a href="#story">Our approach</a><a href="#makers">For sellers</a><a href="creators.html">Creator Circle</a></nav>
+<div class="navtools"><button class="iconbtn" id="wishlistJump" aria-label="Show saved sample items">♡</button><button class="iconbtn" id="openCart" aria-label="Open demo basket">🛒<span class="count" id="cartCount">0</span></button><button class="btn small" id="openMaker">Sell on Triprasa ↗</button></div>
+</div></header>
+<section class="qc-top"><div class="wrap qc-top-inner">
+<div class="qc-location"><span class="qc-location-icon">⌖</span><div style="min-width:0"><small>SHOPPING AREA</small><strong id="locationDisplay">Choose your area</strong><div class="qc-location-note" id="locationNote">Delivery availability not connected</div></div></div>
+<label class="qc-search"><span>⌕</span><input type="search" id="searchInput" placeholder="Search products, crafts, pantry…" aria-label="Search products"></label>
+<div class="qc-support">Local discovery, made easy</div>
+</div></section>
+<main id="main" class="qc-main"><div class="wrap">
+<section class="qc-hero">
+<div class="qc-hero-copy"><div class="qc-kicker">Discover more from Tripura</div><h1>Everyday finds.<br><em>Rooted in place.</em></h1><p>Explore local produce, pantry favourites, handloom, home essentials and independent makers—all in one simple shopping experience.</p><div class="qc-hero-actions"><a class="btn" href="#collection">Start exploring ↓</a><a class="btn outline" href="#makers">Become a seller</a></div></div>
+<div class="qc-hero-art"><img src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?auto=format&fit=crop&w=1100&q=85" alt="Illustrative fresh produce market photograph" loading="eager"><span class="qc-hero-note">Local-first marketplace concept</span><span class="qc-art-label">Inspired by Tripura · Built for discovery</span></div>
+</section>
+<section class="qc-section" id="categories"><div class="qc-section-head"><div><h2>Shop by category</h2><p>Browse the kinds of things you can discover on Triprasa</p></div></div>
+<div class="qc-categories">
+<button class="qc-cat" data-filter="Food"><span class="qc-cat-art">🍍</span><strong>Fresh & pantry</strong><small>Regional food previews</small></button>
+<button class="qc-cat" data-filter="Food"><span class="qc-cat-art">🍵</span><strong>Tea & treats</strong><small>Local food previews</small></button>
+<button class="qc-cat" data-filter="Home"><span class="qc-cat-art">🧺</span><strong>Home essentials</strong><small>Bamboo & utility</small></button>
+<button class="qc-cat" data-filter="Textiles"><span class="qc-cat-art">🧵</span><strong>Handloom</strong><small>Risa & Rignai</small></button>
+<button class="qc-cat" data-filter="Craft"><span class="qc-cat-art">🎋</span><strong>Craft & decor</strong><small>Maker-led categories</small></button>
+<button class="qc-cat" data-filter="All"><span class="qc-cat-art">✳</span><strong>Explore all</strong><small>All sample categories</small></button>
+</div></section>
+<div class="qc-promo"><div><strong>Local stories, one easy basket.</strong><span>Discover sample categories from Tripura's makers and producers.</span></div><span class="qc-promo-tag">TRIPURA FIRST</span></div>
+<section class="qc-section qc-shop" id="collection"><div class="discovery"><div class="section-head"><div><div class="eyebrow">THE TRIPRASA MARKETPLACE</div><h2>Find something local.</h2><p class="muted">Browse category previews. Verified sellers, prices, live inventory and delivery options will appear only when those systems are connected.</p></div><a class="textlink" href="#makers">Sell with us ↗</a></div>
+<div class="pills" aria-label="Filter sample products"><button class="pill active" data-filter="All">All</button><button class="pill" data-filter="Food">Fresh & pantry</button><button class="pill" data-filter="Home">Home essentials</button><button class="pill" data-filter="Textiles">Handloom</button><button class="pill" data-filter="Craft">Craft & decor</button></div>
+<div class="searchrow"><label class="searchbox"><span>⌕</span><input type="search" id="searchInputMirror" placeholder="Search this collection…" aria-label="Search collection"></label><select id="sortSelect" aria-label="Sort products"><option value="featured">Sort: Featured</option><option value="az">Name: A to Z</option><option value="za">Name: Z to A</option></select></div>
+<div class="live-count" aria-live="polite"><strong id="resultCount">Loading sample shelf…</strong><span class="live-hint">Demo catalogue · no live stock or prices</span></div><div class="product-grid" id="products" aria-live="polite"></div>
+<p class="disclaimer">Prototype disclosure: these are illustrative category previews, not live product offers. Images are illustrative stock photography, not verified photographs of the named products. Seller identity, product-specific images, specifications, stock, price and delivery coverage must be confirmed before launch.</p>
+</div></section>
+<div class="qc-trust"><div class="qc-trust-card"><span class="qc-trust-icon">🌱</span><div><strong>Local-first discovery</strong><small>Built around Tripura's producers and makers</small></div></div><div class="qc-trust-card"><span class="qc-trust-icon">🔎</span><div><strong>Clear listing information</strong><small>Seller and product details before purchase</small></div></div><div class="qc-trust-card"><span class="qc-trust-icon">🤝</span><div><strong>Maker-led marketplace</strong><small>Consent, credit and fair representation</small></div></div></div>
+<section class="qc-story" id="story"><div class="qc-story-art" aria-hidden="true">🌿</div><div class="qc-story-copy"><div class="qc-kicker">More than a quick shop</div><h2>Convenience, with a local heartbeat.</h2><p>Triprasa brings a quick-commerce-inspired shopping flow to a marketplace rooted in Tripura. We want discovery to feel simple while keeping maker identity, accurate product information and community context at the centre.</p><p>Fast delivery will be introduced only when local seller coverage, inventory, fulfilment partners and service levels are verified. We will not promise a delivery time before those operations exist.</p></div></section>
+<section class="qc-section" id="makers"><div class="qc-maker"><div><div class="qc-kicker" style="color:#d9a43b">FOR LOCAL SELLERS & MAKERS</div><h2>Bring your products to more people.</h2><p>We are shaping a marketplace for local producers, artisans, food businesses and independent sellers. Share your interest in this browser-only preview; no application is sent to a server yet.</p></div><button class="btn" id="openMaker2">Register your interest ↗</button></div></section>
 </div></main>
-<footer><div class="wrap"><div class="footer-grid"><div><a class="brand" href="#" style="color:white"><span class="logo" style="background:var(--gold);color:var(--forest)" aria-hidden="true"><svg class="triprasa-mark" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M24 5C15 12 9 19 9 27a15 15 0 0 0 30 0C39 19 33 12 24 5Z" fill="currentColor"/><path d="M15 31c7-1 13-7 18-16M15 31c4 1 8 0 11-3" fill="none" stroke="#D8B36C" stroke-width="2.4" stroke-linecap="round"/><path d="M24 14v22" stroke="#D8B36C" stroke-width="1.8" stroke-linecap="round"/></svg></span><span>TRIPRASA</span></a><p>A community-first marketplace concept shaped around Tripura’s handloom, bamboo and cane craft, local producers and the people who keep these skills alive.</p><p>Catalogue preview. Individual seller listings, stock and payments are not live yet.</p></div><div><h3>Explore</h3><p><a href="#categories">Collections</a><br><a href="#collection">Sample shelf</a><br><a href="#story">Our approach</a><br><a href="#makers">For makers</a><br><a href="creators.html">Creator Circle</a></p></div><div><h3>Our commitments</h3><p>Consent before stories.<br>Clear information before purchase.<br>Evidence before impact claims.</p></div></div><div class="footer-note"><span>© 2026 Triprasa concept project</span><span>Rooted in Tripura · Open to possibility</span></div></div></footer>
-<div class="overlay" id="overlay"></div><aside class="drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-labelledby="cartTitle"><div class="drawer-head"><h2 id="cartTitle">Your basket</h2><button class="close" id="closeCart" aria-label="Close basket">×</button></div><p class="muted">Your demo basket is only for testing. Nothing is ordered or charged.</p><div id="cartLines"></div><div id="cartFooter"></div><button class="btn" id="demoCheckout" style="width:100%;margin-top:10px">Continue preview ↗</button><p class="fineprint">Checkout and payments are not connected in this prototype.</p></aside>
-<div class="modal-back" id="productModal"><div class="modal product-detail-modal" role="dialog" aria-modal="true" aria-labelledby="detailTitle"><div class="modal-top"><span class="eyebrow">Product preview</span><button class="close" id="closeProduct" aria-label="Close product details">×</button></div><div id="productDetailContent"></div><p class="fineprint">Category preview only. This is not an individual seller listing. Exact product photos, seller identity, price and availability must be verified before purchase.</p></div></div>
-<div class="modal-back" id="makerModal"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="makerTitle"><div class="modal-top"><h2 id="makerTitle">Meet the maker community</h2><button class="close" id="closeMaker" aria-label="Close form">×</button></div><p>This is a local-only preview form. Your submission is saved in this browser only; it is not sent to a server. Please do not enter sensitive information.</p><form id="makerForm"><div class="field"><label for="makerName">Your name or business name</label><input id="makerName" name="name" required maxlength="100" autocomplete="off" placeholder="Name for this demo"></div><div class="field"><label for="makerType">What do you make or sell?</label><select id="makerType" name="type" required><option value="">Choose a category</option><option>Textiles</option><option>Home & living</option><option>Food & pantry</option><option>Art & craft</option><option>Other</option></select></div><div class="field"><label for="makerMessage">What would you like us to know? (optional)</label><textarea id="makerMessage" name="message" maxlength="500" placeholder="Tell us about your work…"></textarea></div><button class="btn" type="submit">Preview my interest ↗</button><div class="fineprint">Demo only: your interest is saved locally in this browser. No information is sent to a server.</div></form></div></div>
-<div style="position:fixed;left:12px;bottom:12px;z-index:30;background:#fffdf0e8;border:1px solid #e7e0d2;border-radius:99px;padding:7px 11px;color:#526451;font-size:10px;backdrop-filter:blur(10px)" id="dbStatus" role="status" title="Database status">Connecting local database…</div><div class="toast" id="toast" role="status" aria-live="polite"></div>
+<footer><div class="wrap"><div class="footer-grid"><div><a class="brand" href="#" style="color:white"><span class="logo" style="background:#d9a43b;color:#1c301f">✳</span><span>TRIPRASA</span></a><p>A Tripura-rooted marketplace concept for local discovery, everyday shopping and independent makers.</p><p>Sample catalogue only. No live sellers, stock, delivery or payment service is connected.</p></div><div><h3>Explore</h3><p><a href="#categories">Categories</a><br><a href="#collection">Marketplace</a><br><a href="creators.html">Creator Circle</a><br><a href="#makers">Sell on Triprasa</a></p></div><div><h3>Our principles</h3><p>Local-first discovery.<br>Accurate product information.<br>Consent and maker attribution.</p></div></div><div class="footer-note"><span>© 2026 Triprasa · Marketplace prototype</span><span>Rooted in Tripura · Open to the Northeast</span></div></div></footer>
+<div class="qc-bottom-cart"><span><b id="mobileCartCount">0 items</b><small style="display:block;font-size:9px;color:#d4dfd1">Demo basket · no payment</small></span><button id="mobileCartOpen">View basket →</button></div>
+<div class="overlay" id="overlay"></div><aside class="drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-labelledby="cartTitle"><div class="drawer-head"><h2 id="cartTitle">Your basket</h2><button class="close" id="closeCart" aria-label="Close basket">×</button></div><p class="muted">This is a local demo basket. Items are not purchasable and no payment or delivery is connected.</p><div id="cartLines"></div><div id="cartFooter"></div><button class="btn" id="demoCheckout" style="width:100%;margin-top:10px">Continue preview ↗</button><p class="fineprint">No order will be placed and no payment will be collected.</p></aside>
+<div class="modal-back" id="productModal"><div class="modal product-detail-modal" role="dialog" aria-modal="true" aria-labelledby="detailTitle"><div class="modal-top"><span class="eyebrow">Product preview</span><button class="close" id="closeProduct" aria-label="Close product details">×</button></div><div id="productDetailContent"></div><p class="fineprint">Illustrative category preview only. No verified seller, price, stock or delivery details are available.</p></div></div>
+<div class="modal-back" id="makerModal"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="makerTitle"><div class="modal-top"><h2 id="makerTitle">Sell on Triprasa</h2><button class="close" id="closeMaker" aria-label="Close form">×</button></div><p>This interest form is stored in this browser only. It is not sent to Triprasa or any server. Please do not enter sensitive information.</p><form id="makerForm"><div class="field"><label for="makerName">Your name or business name</label><input id="makerName" name="name" required maxlength="100" autocomplete="off" placeholder="Name for this demo"></div><div class="field"><label for="makerType">What do you make or sell?</label><select id="makerType" name="type" required><option value="">Choose a category</option><option>Fresh produce & pantry</option><option>Handloom & textiles</option><option>Home & living</option><option>Craft & decor</option><option>Other</option></select></div><div class="field"><label for="makerMessage">Anything else? (optional)</label><textarea id="makerMessage" name="message" maxlength="500" placeholder="Tell us about your products…"></textarea></div><button class="btn" type="submit">Save local preview ↗</button><div class="fineprint">Demo only · no data is transmitted.</div></form></div></div>
+<div style="position:fixed;left:12px;bottom:12px;z-index:30;background:#fffdf0e8;border:1px solid #e7e0d2;border-radius:99px;padding:7px 11px;color:#526451;font-size:10px;backdrop-filter:blur(10px)" id="dbStatus" role="status" title="Database status">Opening local demo storage…</div><div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script>
 let items=[
 {id:1,name:"Tripura Risa textile",category:"Textiles",maker:"Seller verification pending",price:0,emoji:"",visual:"v1",tag:"GI-REGISTERED TEXTILE",desc:"Tripura Risa is a registered Geographical Indication textile. This is a category preview; the exact product, producer, dimensions and price are not yet verified."},
@@ -871,10 +1051,10 @@ function render(){
  products.innerHTML=list.length?list.map(x=>{
   const id=Number(x.id),name=safe(x.name),category=safe(x.category),desc=safe(x.desc),maker=safe(x.maker),tag=safe(x.tag),visual=/^v[1-8]$/.test(x.visual)?x.visual:"";
   const wished=state.wishes.has(id);
-  return '<article class="product"><div class="product-visual '+visual+'"><span class="product-tag">'+tag+'</span><button class="wish '+(wished?"loved":"")+'" data-wish="'+id+'" aria-label="'+(wished?"Remove "+name+" from":"Save "+name+" to")+' wishlist" aria-pressed="'+wished+'">'+(wished?"♥":"♡")+'</button><span class="emoji" aria-hidden="true"></span><button class="quick-view" data-detail="'+id+'">View details ↗</button></div><div class="product-info"><div class="maker">'+maker+' · '+category+'</div><h3><button class="product-title" data-detail="'+id+'">'+name+'</button></h3><p class="product-desc">'+desc+'</p><div class="product-bottom"><span class="price">Enquire soon <small>listing pending</small></span><button class="add" data-add="'+id+'" aria-label="Add '+name+' to demo basket">+</button></div></div></article>';
+  return '<article class="product"><div class="product-visual '+visual+'"><span class="product-tag">'+tag+'</span><button class="wish '+(wished?"loved":"")+'" data-wish="'+id+'" aria-label="'+(wished?"Remove "+name+" from":"Save "+name+" to")+' wishlist" aria-pressed="'+wished+'">'+(wished?"♥":"♡")+'</button><span class="emoji" aria-hidden="true"></span><button class="quick-view" data-detail="'+id+'">View details ↗</button></div><div class="product-info"><div class="maker">'+maker+' · '+category+'</div><h3><button class="product-title" data-detail="'+id+'">'+name+'</button></h3><p class="product-desc">'+desc+'</p><div class="product-bottom"><span class="price">Price & stock pending <small>seller setup required</small></span><button class="add" data-add="'+id+'" aria-label="Add '+name+' to demo basket">ADD</button></div></div></article>';
  }).join(""):'<div class="empty">Nothing on this shelf just yet. Try another search or explore everything.</div>';
  document.querySelectorAll("[data-filter]").forEach(b=>b.classList.toggle("active",b.dataset.filter===state.category));
- $("cartCount").textContent=Object.values(state.basket).reduce((a,b)=>a+b,0);
+ const basketCount=Object.values(state.basket).reduce((a,b)=>a+b,0);$("cartCount").textContent=basketCount;const mobileCount=$("mobileCartCount");if(mobileCount)mobileCount.textContent=basketCount+" item"+(basketCount===1?"":"s");
  renderCart();
 }
 function renderCart(){
@@ -892,7 +1072,14 @@ function openProductDetail(id){
 }
 products.addEventListener("click",e=>{const detail=e.target.closest("[data-detail]");if(detail){openProductDetail(detail.dataset.detail);return}const add=e.target.closest("[data-add]"),wish=e.target.closest("[data-wish]");if(add){const id=Number(add.dataset.add);state.basket[id]=(state.basket[id]||0)+1;render();notify("Added to your demo basket •")}if(wish){const id=Number(wish.dataset.wish);state.wishes.has(id)?state.wishes.delete(id):state.wishes.add(id);render();notify(state.wishes.has(id)?"Saved to your sample wishlist ♡":"Removed from your sample wishlist")}});$("cartLines").addEventListener("click",e=>{const b=e.target.closest("[data-qty]");if(!b)return;const id=Number(b.dataset.qty);state.basket[id]=(state.basket[id]||0)+Number(b.dataset.change);if(state.basket[id]<=0)delete state.basket[id];render()});
 document.querySelectorAll("[data-filter],.category").forEach(b=>b.addEventListener("click",()=>{state.category=b.dataset.filter||b.dataset.category;$("searchInput").value=state.search;render();$("collection").scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"})}));
-$("searchInput").addEventListener("input",e=>{state.search=e.target.value;render()});$("sortSelect").addEventListener("change",e=>{state.sort=e.target.value;render()});$("openCart").addEventListener("click",openCart);$("closeCart").addEventListener("click",closeCart);overlay.addEventListener("click",closeCart);$("demoCheckout").addEventListener("click",saveDemoOrder);$("openMaker").addEventListener("click",openMaker);$("openMaker2").addEventListener("click",openMaker);$("closeMaker").addEventListener("click",closeMaker);modal.addEventListener("click",e=>{if(e.target===modal)closeMaker()});const productModal=$("productModal");$("closeProduct").addEventListener("click",()=>productModal.classList.remove("open"));productModal.addEventListener("click",e=>{if(e.target===productModal)productModal.classList.remove("open")});$("productDetailContent").addEventListener("click",e=>{if(e.target.closest("#detailClose"))productModal.classList.remove("open");const save=e.target.closest("[data-detail-wish]");if(save){const id=Number(save.dataset.detailWish);state.wishes.has(id)?state.wishes.delete(id):state.wishes.add(id);render();openProductDetail(id);notify(state.wishes.has(id)?"Saved to your sample wishlist ♡":"Removed from your sample wishlist")}});$("makerForm").addEventListener("submit",async e=>{e.preventDefault();const form=e.currentTarget;const data={name:form.elements.name.value.trim(),type:form.elements.type.value,message:form.elements.message.value.trim()};if(!data.name||!data.type){notify("Please add your name and choose a category.");return}try{await saveMakerApplication(data);closeMaker();form.reset();notify("Interest saved locally on this browser. No data was sent.")}catch(error){console.warn("Maker interest save failed",error);notify("Could not save locally. Please try again.")}});$("wishlistJump").addEventListener("click",()=>{state.wishlistOnly=!state.wishlistOnly;state.category="All";document.querySelectorAll("[data-filter]").forEach(b=>b.classList.toggle("active",b.dataset.filter==="All"));$("collection").scrollIntoView({behavior:"smooth"});render();notify(state.wishlistOnly?"Showing your saved sample items":"Showing the full sample shelf")});document.addEventListener("keydown",e=>{if(e.key==="Escape"){closeCart();closeMaker();productModal.classList.remove("open");overlay.classList.remove("open")}});
+$("searchInput").addEventListener("input",e=>{state.search=e.target.value;const mirror=$("searchInputMirror");if(mirror)mirror.value=state.search;render()});$("searchInputMirror").addEventListener("input",e=>{state.search=e.target.value;$("searchInput").value=state.search;render()});$("sortSelect").addEventListener("change",e=>{state.sort=e.target.value;render()});$("openCart").addEventListener("click",openCart);$("closeCart").addEventListener("click",closeCart);overlay.addEventListener("click",closeCart);$("demoCheckout").addEventListener("click",saveDemoOrder);$("openMaker").addEventListener("click",openMaker);$("openMaker2").addEventListener("click",openMaker);$("closeMaker").addEventListener("click",closeMaker);modal.addEventListener("click",e=>{if(e.target===modal)closeMaker()});const productModal=$("productModal");$("closeProduct").addEventListener("click",()=>productModal.classList.remove("open"));productModal.addEventListener("click",e=>{if(e.target===productModal)productModal.classList.remove("open")});$("productDetailContent").addEventListener("click",e=>{if(e.target.closest("#detailClose"))productModal.classList.remove("open");const save=e.target.closest("[data-detail-wish]");if(save){const id=Number(save.dataset.detailWish);state.wishes.has(id)?state.wishes.delete(id):state.wishes.add(id);render();openProductDetail(id);notify(state.wishes.has(id)?"Saved to your sample wishlist ♡":"Removed from your sample wishlist")}});$("makerForm").addEventListener("submit",async e=>{e.preventDefault();const form=e.currentTarget;const data={name:form.elements.name.value.trim(),type:form.elements.type.value,message:form.elements.message.value.trim()};if(!data.name||!data.type){notify("Please add your name and choose a category.");return}try{await saveMakerApplication(data);closeMaker();form.reset();notify("Interest saved locally on this browser. No data was sent.")}catch(error){console.warn("Maker interest save failed",error);notify("Could not save locally. Please try again.")}});$("wishlistJump").addEventListener("click",()=>{state.wishlistOnly=!state.wishlistOnly;state.category="All";document.querySelectorAll("[data-filter]").forEach(b=>b.classList.toggle("active",b.dataset.filter==="All"));$("collection").scrollIntoView({behavior:"smooth"});render();notify(state.wishlistOnly?"Showing your saved sample items":"Showing the full sample shelf")});document.addEventListener("keydown",e=>{if(e.key==="Escape"){closeCart();closeMaker();productModal.classList.remove("open");overlay.classList.remove("open")}});
+const mobileCartButton=$("mobileCartOpen");if(mobileCartButton)mobileCartButton.addEventListener("click",openCart);
+const areaDisplay=$("locationDisplay"),areaNote=$("locationNote");
+const savedArea=(()=>{try{return localStorage.getItem("triprasa-shopping-area")||""}catch(_){return ""}})();
+if(savedArea){areaDisplay.textContent=savedArea;areaNote.textContent="Saved on this device · serviceability not checked"}
+else{areaDisplay.textContent="Choose your area";areaNote.textContent="Delivery availability not connected"}
+areaDisplay.style.cursor="text";areaDisplay.title="Enter your shopping area";
+areaDisplay.addEventListener("click",()=>{const value=prompt("Enter your city or neighbourhood (do not enter a full address):",savedArea);if(value&&value.trim()){const clean=value.trim().slice(0,70);areaDisplay.textContent=clean;areaNote.textContent="Saved on this device · serviceability not checked";try{localStorage.setItem("triprasa-shopping-area",clean)}catch(_){}}});
 initialiseLocalDB();render();
 
 function updateLiveTime(){
