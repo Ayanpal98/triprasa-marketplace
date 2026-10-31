@@ -1157,6 +1157,35 @@ footer{margin-top:38px;background:#142b1e}
  .qc-cat,.qc-shop .product,.qc-hero-art img,.navlinks a:after{transition:none!important}
 }
 
+/* Visual asset polish: make editorial photography legible and disclose sample imagery */
+.qc-shop .product-visual{background-color:#dfe5d8;background-repeat:no-repeat;background-size:cover;background-position:center;isolation:isolate}
+.qc-shop .product-visual:before{z-index:0;background:linear-gradient(180deg,#13291b10 0%,#13291b00 42%,#13291b60 100%)}
+.qc-shop .product-visual:after{z-index:0;border-color:#fff9}
+.qc-shop .product-visual .emoji,.detail-art .emoji{display:none}
+.qc-shop .product-visual.v1{background-position:center 45%}
+.qc-shop .product-visual.v2{background-position:center 52%}
+.qc-shop .product-visual.v3{background-position:center 58%}
+.qc-shop .product-visual.v4{background-position:center 48%}
+.qc-shop .product-visual.v5{background-position:center 50%}
+.qc-shop .product-visual.v6{background-position:center 42%}
+.qc-shop .product-visual.v7{background-position:center 58%}
+.qc-shop .product-visual.v8{background-position:center 48%}
+.visual-disclosure{position:absolute;z-index:3;left:11px;bottom:11px;max-width:calc(100% - 22px);padding:6px 9px;border:1px solid #ffffff70;border-radius:999px;background:#fffdf0e8;color:#4b6049;font-size:8px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;backdrop-filter:blur(8px)}
+.product-visual .product-tag{z-index:3}
+.product-visual .wish,.product-visual .quick-view{z-index:4}
+.detail-art{background-size:cover;background-position:center;background-repeat:no-repeat;position:relative;min-height:300px;overflow:hidden}
+.detail-art:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#142d2008,#142d2045);pointer-events:none}
+.detail-art .visual-disclosure{bottom:15px;left:15px}
+.qc-story-art{position:relative;isolation:isolate;background-color:#dfe7d9;background-image:repeating-linear-gradient(45deg,#31543b0b 0 2px,transparent 2px 12px),repeating-linear-gradient(-45deg,#31543b09 0 1px,transparent 1px 14px),radial-gradient(ellipse at 50% 55%,#f4efdf 0 18%,transparent 18.5%),linear-gradient(135deg,#dbe5d5,#a9b99f)}
+.qc-story-art:before{content:"";position:absolute;width:min(58%,250px);aspect-ratio:1;border:1px solid #31543b55;border-radius:50%;box-shadow:0 0 0 15px #31543b0b,0 0 0 31px #31543b08,0 0 0 48px #31543b06;z-index:-1}
+.qc-story-art:after{content:"";position:absolute;inset:12% 24%;border-left:1px solid #31543b4d;border-right:1px solid #31543b4d;transform:rotate(28deg);pointer-events:none}
+.story-art-caption{position:absolute;bottom:16px;left:18px;padding:8px 12px;border-radius:999px;background:#173d2be8;color:#fffdf7;font-size:9px;letter-spacing:.14em}
+@media(max-width:650px){
+ .visual-disclosure{left:8px;bottom:8px;padding:5px 7px;font-size:7px}
+ .detail-art{min-height:220px}
+ .qc-story-art{min-height:160px}
+}
+
 </style>
 </head>
 <body>
@@ -1194,7 +1223,7 @@ footer{margin-top:38px;background:#142b1e}
 <p class="disclaimer">Prototype disclosure: these are illustrative category previews, not live product offers. Images are illustrative stock photography, not verified photographs of the named products. Seller identity, product-specific images, specifications, stock, price and delivery coverage must be confirmed before launch.</p>
 </div></section>
 <div class="qc-trust"><div class="qc-trust-card"><span class="qc-trust-icon">🌱</span><div><strong>Local-first discovery</strong><small>Built around Tripura's producers and makers</small></div></div><div class="qc-trust-card"><span class="qc-trust-icon">🔎</span><div><strong>Clear listing information</strong><small>Seller and product details before purchase</small></div></div><div class="qc-trust-card"><span class="qc-trust-icon">🤝</span><div><strong>Maker-led marketplace</strong><small>Consent, credit and fair representation</small></div></div></div>
-<section class="qc-story" id="story"><div class="qc-story-art" aria-hidden="true">🌿</div><div class="qc-story-copy"><div class="qc-kicker">More than a quick shop</div><h2>Convenience, with a local heartbeat.</h2><p>Triprasa brings a quick-commerce-inspired shopping flow to a marketplace rooted in Tripura. We want discovery to feel simple while keeping maker identity, accurate product information and community context at the centre.</p><p>Fast delivery will be introduced only when local seller coverage, inventory, fulfilment partners and service levels are verified. We will not promise a delivery time before those operations exist.</p></div></section>
+<section class="qc-story" id="story"><div class="qc-story-art" aria-hidden="true"><span class="story-art-caption">ROOTED IN TRIPURA</span></div><div class="qc-story-copy"><div class="qc-kicker">More than a quick shop</div><h2>Convenience, with a local heartbeat.</h2><p>Triprasa brings a quick-commerce-inspired shopping flow to a marketplace rooted in Tripura. We want discovery to feel simple while keeping maker identity, accurate product information and community context at the centre.</p><p>Fast delivery will be introduced only when local seller coverage, inventory, fulfilment partners and service levels are verified. We will not promise a delivery time before those operations exist.</p></div></section>
 <section class="qc-section" id="makers"><div class="qc-maker"><div><div class="qc-kicker" style="color:#d9a43b">FOR LOCAL SELLERS & MAKERS</div><h2>Bring your products to more people.</h2><p>We are shaping a marketplace for local producers, artisans, food businesses and independent sellers. Share your interest in this browser-only preview; no application is sent to a server yet.</p></div><button class="btn" id="openMaker2">Register your interest ↗</button></div></section>
 </div></main>
 <footer><div class="wrap"><div class="footer-grid"><div><a class="brand" href="#" style="color:white"><span class="logo" style="background:#d9a43b;color:#1c301f">✳</span><span>TRIPRASA</span></a><p>A Tripura-rooted marketplace concept for local discovery, everyday shopping and independent makers.</p><p>Sample catalogue only. No live sellers, stock, delivery or payment service is connected.</p></div><div><h3>Explore</h3><p><a href="#categories">Categories</a><br><a href="#collection">Marketplace</a><br><a href="creators.html">Creator Circle</a><br><a href="#makers">Sell on Triprasa</a></p></div><div><h3>Our principles</h3><p>Local-first discovery.<br>Accurate product information.<br>Consent and maker attribution.</p></div></div><div class="footer-note"><span>© 2026 Triprasa · Marketplace prototype</span><span>Rooted in Tripura · Open to the Northeast</span></div></div></footer>
@@ -1237,7 +1266,7 @@ function render(){
  products.innerHTML=list.length?list.map(x=>{
   const id=Number(x.id),name=safe(x.name),category=safe(x.category),desc=safe(x.desc),maker=safe(x.maker),tag=safe(x.tag),visual=/^v[1-8]$/.test(x.visual)?x.visual:"";
   const wished=state.wishes.has(id);
-  return '<article class="product"><div class="product-visual '+visual+'"><span class="product-tag">'+tag+'</span><button class="wish '+(wished?"loved":"")+'" data-wish="'+id+'" aria-label="'+(wished?"Remove "+name+" from":"Save "+name+" to")+' wishlist" aria-pressed="'+wished+'">'+(wished?"♥":"♡")+'</button><span class="emoji" aria-hidden="true"></span><button class="quick-view" data-detail="'+id+'">View details ↗</button></div><div class="product-info"><div class="maker">'+maker+' · '+category+'</div><h3><button class="product-title" data-detail="'+id+'">'+name+'</button></h3><p class="product-desc">'+desc+'</p><div class="product-bottom"><span class="price">Price & stock pending <small>seller setup required</small></span><button class="add" data-add="'+id+'" aria-label="Add '+name+' to demo basket">ADD</button></div></div></article>';
+  return '<article class="product"><div class="product-visual '+visual+'"><span class="product-tag">'+tag+'</span><span class="visual-disclosure">Illustrative image</span><button class="wish '+(wished?"loved":"")+'" data-wish="'+id+'" aria-label="'+(wished?"Remove "+name+" from":"Save "+name+" to")+' wishlist" aria-pressed="'+wished+'">'+(wished?"♥":"♡")+'</button><span class="emoji" aria-hidden="true"></span><button class="quick-view" data-detail="'+id+'">View details ↗</button></div><div class="product-info"><div class="maker">'+maker+' · '+category+'</div><h3><button class="product-title" data-detail="'+id+'">'+name+'</button></h3><p class="product-desc">'+desc+'</p><div class="product-bottom"><span class="price">Price & stock pending <small>seller setup required</small></span><button class="add" data-add="'+id+'" aria-label="Add '+name+' to demo basket">ADD</button></div></div></article>';
  }).join(""):'<div class="empty">Nothing on this shelf just yet. Try another search or explore everything.</div>';
  document.querySelectorAll("[data-filter]").forEach(b=>b.classList.toggle("active",b.dataset.filter===state.category));
  const basketCount=Object.values(state.basket).reduce((a,b)=>a+b,0);$("cartCount").textContent=basketCount;const mobileCount=$("mobileCartCount");if(mobileCount)mobileCount.textContent=basketCount+" item"+(basketCount===1?"":"s");
@@ -1261,7 +1290,7 @@ function openProductDetail(id){
  const x=items.find(p=>p.id===Number(id));if(!x)return;
  dialogReturnFocus=document.activeElement;
  const safe=escapeHTML,modal=$("productModal"),name=safe(x.name),category=safe(x.category),maker=safe(x.maker),desc=safe(x.desc);
- $("productDetailContent").innerHTML='<div class="detail-layout"><div class="detail-art '+(/^[v][1-8]$/.test(x.visual)?x.visual:"")+'"><span class="emoji" aria-hidden="true"></span></div><div class="detail-copy"><div class="maker">'+maker+' · '+category+'</div><h2 id="detailTitle">'+name+'</h2><p>'+desc+'</p><div class="detail-price">Listing pending <span style="font-size:11px;font-weight:500;color:var(--muted)">seller verification required</span></div><div class="detail-meta"><div><small>Category</small><b>'+category+'</b></div><div><small>Listing status</small><b>Illustrative sample</b></div><div><small>Maker details</small><b>Not verified</b></div><div><small>Availability</small><b>Not for sale</b></div></div><div class="detail-actions"><button class="btn" data-detail-wish="'+Number(x.id)+'">'+(state.wishes.has(x.id)?"♥ Saved to wishlist":"♡ Save sample")+'</button><button class="btn outline" id="detailClose">Close preview</button></div></div></div>';
+ $("productDetailContent").innerHTML='<div class="detail-layout"><div class="detail-art '+(/^[v][1-8]$/.test(x.visual)?x.visual:"")+'"><span class="visual-disclosure">Illustrative image · sample listing</span><span class="emoji" aria-hidden="true"></span></div><div class="detail-copy"><div class="maker">'+maker+' · '+category+'</div><h2 id="detailTitle">'+name+'</h2><p>'+desc+'</p><div class="detail-price">Listing pending <span style="font-size:11px;font-weight:500;color:var(--muted)">seller verification required</span></div><div class="detail-meta"><div><small>Category</small><b>'+category+'</b></div><div><small>Listing status</small><b>Illustrative sample</b></div><div><small>Maker details</small><b>Not verified</b></div><div><small>Availability</small><b>Not for sale</b></div></div><div class="detail-actions"><button class="btn" data-detail-wish="'+Number(x.id)+'">'+(state.wishes.has(x.id)?"♥ Saved to wishlist":"♡ Save sample")+'</button><button class="btn outline" id="detailClose">Close preview</button></div></div></div>';
  modal.classList.add("open");lockPageScroll();$("closeProduct").focus();
 }
 products.addEventListener("click",e=>{const detail=e.target.closest("[data-detail]");if(detail){openProductDetail(detail.dataset.detail);return}const add=e.target.closest("[data-add]"),wish=e.target.closest("[data-wish]");if(add){const id=Number(add.dataset.add);state.basket[id]=(state.basket[id]||0)+1;render();notify("Added to your demo basket •")}if(wish){const id=Number(wish.dataset.wish);state.wishes.has(id)?state.wishes.delete(id):state.wishes.add(id);render();notify(state.wishes.has(id)?"Saved to your sample wishlist ♡":"Removed from your sample wishlist")}});$("cartLines").addEventListener("click",e=>{const b=e.target.closest("[data-qty]");if(!b)return;const id=Number(b.dataset.qty);state.basket[id]=(state.basket[id]||0)+Number(b.dataset.change);if(state.basket[id]<=0)delete state.basket[id];render()});
