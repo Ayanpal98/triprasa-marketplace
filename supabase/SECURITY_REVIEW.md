@@ -15,7 +15,7 @@
 3. **Seller data isolation is absent.** Current product write policies are admin-only. A seller-scoped policy cannot be safely added until seller ownership and membership entities exist.
 4. **Order writes are intentionally disabled.** Preserve this until trusted server-side checkout verifies price, stock, serviceability, payment and idempotency.
 5. **Current admin UI is not safe for real data.** It is browser-local and unauthenticated. Do not connect it to shared customer/seller records.
-6. **Schema syntax needs repair/review.** The existing `private.handle_new_user()` function body uses a malformed dollar-quote delimiter (`as $` / `$;`) in the checked-in file. Treat the current SQL as non-deployable until corrected and tested.
+6. **Schema syntax was defective and is now textually corrected, but remains unvalidated.** The `private.handle_new_user()` function body previously used a malformed dollar-quote delimiter; the repository file has been corrected to `$`. It has not been run against PostgreSQL and must not be treated as a tested migration.
 7. **Adapter authorization is convenience only.** A browser-side `requireAdmin()` check is not a security boundary. RLS and trusted server-side authorization must enforce all privileges.
 8. **No remote project is selected.** The repository setup guide previously mentioned an unrelated/inactive project name; that reference is removed from current setup guidance. Do not reuse any existing project without explicit owner confirmation.
 
