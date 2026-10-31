@@ -46,3 +46,16 @@ Applied to the storefront after the Phase 0–1 release:
 - Added small-screen bottom safe-area spacing so the persistent demo basket bar is less likely to cover the final content, plus tighter narrow-screen controls and product-title wrapping.
 
 These are source-level changes only. The area selector still uses a browser prompt, and no location lookup, serviceability check or delivery promise is introduced. Browser/device QA, screen-reader testing and automated accessibility checks remain outstanding; this pass does not mark them as passed.
+
+
+## Hybrid visual refresh — 31 October 2026
+
+Applied a balanced editorial + quick-commerce visual pass to the existing storefront:
+- Refined the forest-green, warm-cream, sage and muted-gold palette and gave the header/navigation a more editorial treatment on desktop while retaining the compact mobile header.
+- Reworked the hero hierarchy, scale, image framing, overlays and calls to action without replacing the existing illustrative stock image or changing its disclosure.
+- Restyled category tiles as larger, more tactile discovery cards; improved the promotional strip and section typography.
+- Refined catalogue filters, search, sample product cards, listing-status hierarchy and demo add controls.
+- Restyled trust principles, maker storytelling, seller-interest CTA, footer and mobile basket bar.
+- Added responsive breakpoints and reduced-motion-aware transitions; retained existing content, sample data, browser-local demo flows and disclosure language.
+
+No real seller/product data, prices, inventory, serviceability, delivery capacity or payment capability was added. No Supabase configuration, migration or production connection was changed. This is a source-level visual implementation; cross-browser/device, visual-regression and accessibility testing remain outstanding.
