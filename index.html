@@ -54,6 +54,10 @@
 }
 </script>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="apple-touch-icon" href="/icons/triprasa-icon.svg">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="apple-touch-icon" href="/favicon.svg">
 <title>Triprasa — Stories made tangible</title>
 <style>
@@ -979,7 +983,7 @@ footer{background:#172b1e;margin-top:28px}
 <header><div class="wrap nav">
 <a class="brand" href="#" aria-label="Triprasa home"><span class="logo" aria-hidden="true"><svg class="triprasa-mark" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 5C15 12 9 19 9 27a15 15 0 0 0 30 0C39 19 33 12 24 5Z" fill="currentColor"/><path d="M15 31c7-1 13-7 18-16M15 31c4 1 8 0 11-3" fill="none" stroke="#D9A43B" stroke-width="2.4" stroke-linecap="round"/><path d="M24 14v22" stroke="#D9A43B" stroke-width="1.8" stroke-linecap="round"/></svg></span><span>TRIPRASA</span></a>
 <nav class="navlinks" aria-label="Main navigation"><a href="#categories">Categories</a><a href="#collection">Shop</a><a href="#story">Our approach</a><a href="#makers">For sellers</a><a href="creators.html">Creator Circle</a></nav>
-<div class="navtools"><button class="iconbtn" id="wishlistJump" aria-label="Show saved sample items">♡</button><button class="iconbtn" id="openCart" aria-label="Open demo basket">🛒<span class="count" id="cartCount">0</span></button><button class="btn small" id="openMaker">Sell on Triprasa ↗</button></div>
+<div class="navtools"><button class="btn small outline" id="pwaInstall" type="button" hidden>Install app</button><button class="iconbtn" id="wishlistJump" aria-label="Show saved sample items">♡</button><button class="iconbtn" id="openCart" aria-label="Open demo basket">🛒<span class="count" id="cartCount">0</span></button><button class="btn small" id="openMaker">Sell on Triprasa ↗</button></div>
 </div></header>
 <section class="qc-top"><div class="wrap qc-top-inner">
 <div class="qc-location"><span class="qc-location-icon">⌖</span><div style="min-width:0"><small>SHOPPING AREA</small><strong id="locationDisplay">Choose your area</strong><div class="qc-location-note" id="locationNote">Delivery availability not connected</div></div></div>
@@ -1093,6 +1097,32 @@ function updateLiveTime(){
  if(greetingNode){const h=Number(new Intl.DateTimeFormat("en-IN",{timeZone:"Asia/Kolkata",hour:"2-digit",hour12:false}).format(now));greetingNode.textContent=h<12?"Good morning, explorer":h<17?"Good afternoon, explorer":h<21?"Good evening, explorer":"A quieter hour for discovery";}
 }
 updateLiveTime();setInterval(updateLiveTime,1000);
+
+// PWA installation is offered only when the browser signals that installation is available.
+let deferredInstallPrompt = null;
+const installButton = $("pwaInstall");
+window.addEventListener("beforeinstallprompt", (event) => {
+  event.preventDefault();
+  deferredInstallPrompt = event;
+  if (installButton) installButton.hidden = false;
+});
+if (installButton) installButton.addEventListener("click", async () => {
+  if (!deferredInstallPrompt) return;
+  deferredInstallPrompt.prompt();
+  await deferredInstallPrompt.userChoice;
+  deferredInstallPrompt = null;
+  installButton.hidden = true;
+});
+window.addEventListener("appinstalled", () => {
+  if (installButton) installButton.hidden = true;
+  notify("Triprasa was installed on this device.");
+});
+if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/service-worker.js", { scope: "/" })
+      .catch((error) => console.warn("Triprasa offline shell could not be registered:", error));
+  });
+}
 
 </script>
 </body>
