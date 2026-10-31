@@ -1,0 +1,19 @@
+{
+  "id": "/",
+  "name": "Triprasa — Local discovery, made easy",
+  "short_name": "Triprasa",
+  "description": "Discover a Tripura-rooted marketplace concept for local products, makers and everyday finds.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
+  "orientation": "portrait-primary",
+  "background_color": "#faf7ef",
+  "theme_color": "#183d2c",
+  "lang": "en-IN",
+  "categories": ["shopping", "lifestyle"],
+  "icons": [
+    { "src": "/icons/triprasa-icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "/icons/triprasa-icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "maskable" }
+  ]
+}
