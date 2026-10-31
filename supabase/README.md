@@ -1,29 +1,34 @@
-# Triprasa shared backend setup
+# Triprasa shared backend preparation
 
-Triprasa is currently a static frontend prototype. This folder prepares a Supabase/Postgres schema for a shared catalogue, maker applications, customer profiles, and account-scoped order records.
+Triprasa is currently a static frontend prototype with a PWA app shell. This folder contains legacy proof-of-concept Supabase scaffolding and a pre-connection security review. It is not ready for production.
 
 ## Important status
+- No Supabase project has been selected, connected, queried or modified for Triprasa.
+- `schema.sql` is a legacy proof-of-concept only. Do not apply it; it does not model the hybrid marketplace and is not a production migration.
+- The browser adapter remains unconfigured because `supabase/config.js` is absent and git-ignored.
+- The storefront and `admin.html` use browser-local demo data. The admin page is not authenticated and must not receive real customer or seller information.
+- No migration, auth user, seller record, order, payment or live inventory has been created.
 
-- `schema.sql` is a proposed schema; it has **not** been applied to a live database.
-- The storefront and `admin.html` still use browser-local demo data until the Supabase client integration is implemented and configured.
-- The public admin route currently has no authentication. Do not enter real customer, seller, or business-sensitive information there.
-- Do not add a Supabase service-role key or secret key to frontend code or GitHub.
+## Decisions recorded
+- Launch planning geography: Agartala first; exact service localities remain TBD.
+- Platform: responsive web + PWA first.
+- Operating model: hybrid marketplace with seller-specific fulfilment orders.
+- Delivery: local delivery partners; no partner roster, service capacity, price or ETA is assumed.
 
-## Setup sequence
+## Safe sequence
+1. Review `SECURITY_REVIEW.md` and the domain model in `../docs/COMMERCE_ARCHITECTURE.md`.
+2. Design a new hybrid schema covering seller accounts/memberships, locations, catalogue variants, inventory, parent orders, seller orders, payments, delivery jobs, refunds and settlement ledger.
+3. Design and test row-level security for customer, seller-member, delivery-partner and admin roles, including cross-tenant denial tests.
+4. Select a dedicated Triprasa project explicitly and confirm its organization and region before any connection.
+5. Review current Supabase docs/changelog and apply reviewed migrations only to an isolated development project after owner approval.
+6. Run security/performance advisors and test anonymous, customer, seller A, seller B, delivery partner and admin sessions.
+7. Keep production disconnected until the schema, RLS, storage, secrets and operational policies have passed review.
 
-1. Choose or create the correct Supabase project for Triprasa. The available connected project discovered during setup is named `ashasetu` and is inactive; do not assume it belongs to Triprasa or reuse it without confirming.
-2. In the chosen project, review and run `schema.sql` using the Supabase SQL Editor or an approved migration workflow.
-3. Enable email authentication and configure the allowed site URL and redirect URLs for the deployed Triprasa domain.
-4. Create the intended operator account through Supabase Auth. Find its Auth user UUID, then run the final commented SQL statement in `schema.sql` to assign the `admin` role. Never assign roles from public browser input.
-5. Configure the frontend with the project's Supabase URL and publishable key only. Never expose a service-role/secret key.
-6. Implement and test authenticated admin and maker flows, then switch the storefront from local demo records to shared records.
-7. Keep checkout in demo mode until server-side pricing, inventory checks, and verified payment handling exist.
+## Key files
+- `schema.sql` — legacy proof-of-concept; do not apply.
+- `adapter.js` — unconfigured browser adapter; not wired into the live storefront.
+- `config.example.js` — placeholder for a future publishable key and project URL.
+- `INTEGRATION.md` — integration boundary and non-goals.
+- `SECURITY_REVIEW.md` — findings and required security gates.
 
-## Tables
-
-- `profiles`: user profile and trusted role.
-- `products`: catalogue, with public reads limited to published products and management limited to admins.
-- `maker_applications`: signed-in seller submissions; each applicant sees their own record, admins can review all.
-- `orders` and `order_items`: account-scoped order records. These are not a payment integration.
-
-Row-level security is enabled for all public tables. Review policies and run the project's security advisors before production use.
+Never place a service-role key or secret key in browser code, Vercel public environment variables or Git.
