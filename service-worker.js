@@ -1,5 +1,5 @@
 const CACHE_NAME = "triprasa-shell-v1";
-const APP_SHELL = ["/", "/index.html", "/manifest.webmanifest", "/favicon.svg", "/icons/triprasa-icon.svg"];
+const APP_SHELL = ["/", "/manifest.webmanifest", "/favicon.svg", "/icons/triprasa-icon.svg"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil((async () => {
