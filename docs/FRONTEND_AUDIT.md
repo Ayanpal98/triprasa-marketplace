@@ -34,3 +34,15 @@ Repository pages and project guidance reviewed:
 
 ## Test status
 This was a source-level audit and code repair. A live browser/device test suite was not run in this pass. Do not treat the remaining checklist items as passed.
+
+
+## Follow-up UX and accessibility pass — 31 October 2026
+
+Applied to the storefront after the Phase 0–1 release:
+- Converted the shopping-area display into a real keyboard-focusable button while retaining the existing browser-local area preference and explicit no-serviceability-check notice.
+- Added keyboard focus containment for the basket, seller-interest dialog and product preview; Escape closes the topmost open surface.
+- Added focus restoration and background-scroll locking when those surfaces close/open.
+- Added a designed fallback state for the hero image if its remote image fails to load.
+- Added small-screen bottom safe-area spacing so the persistent demo basket bar is less likely to cover the final content, plus tighter narrow-screen controls and product-title wrapping.
+
+These are source-level changes only. The area selector still uses a browser prompt, and no location lookup, serviceability check or delivery promise is introduced. Browser/device QA, screen-reader testing and automated accessibility checks remain outstanding; this pass does not mark them as passed.
