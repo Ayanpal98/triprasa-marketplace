@@ -2,53 +2,35 @@
 
 ## Current mode
 
-This is preparation code only. No Supabase project is selected or connected. The adapter safely loads with no local `supabase/config.js` and remains unconfigured. The current storefront and admin continue using browser-local demo data.
+This is preparation code only. No Supabase project has been selected, connected, queried or changed. The adapter safely loads with no local `supabase/config.js` and remains unconfigured. The current storefront and admin continue using browser-local demo data.
 
 ## Files
-
-- `schema.sql` — proposed Postgres tables, triggers, and row-level security policies.
+- `schema.sql` — legacy proof-of-concept only; do not apply to a hybrid marketplace.
 - `config.example.js` — browser-safe configuration template.
-- `adapter.js` — reusable auth, published catalogue, maker application, and admin catalogue/review methods.
-- `README.md` — this integration sequence.
+- `adapter.js` — existing prototype adapter; not wired into the storefront and not a security boundary.
+- `SECURITY_REVIEW.md` — repository findings and required pre-connection checks.
 
-## Configure later
+## Agartala-first platform decisions
+- Responsive web + PWA first.
+- Hybrid multi-vendor basket with separate seller fulfilment orders.
+- Local delivery partners; exact service areas and partner capacity remain unverified/TBD.
+- Keep the existing Vercel storefront as the prototype baseline.
 
-1. Select or create a dedicated Triprasa Supabase project.
-2. Review and apply `schema.sql` only after checking it against the selected project's policies and schema.
-3. Copy `config.example.js` to `config.js` locally (the file is git-ignored), then add the project URL and its publishable/anon key. Never commit that local file.
-4. Create the first operator via Supabase Auth. Promote that specific Auth UUID to `admin` using a trusted SQL session. Never expose privileged keys in browser code.
-5. Include the adapter from a page using an ES module, for example:
-   ```html
-   <script type="module">
-     import { TriprasaBackend } from "./supabase/adapter.js";
-     console.log("Shared backend configured:", TriprasaBackend.isConfigured());
-   </script>
-   ```
-6. Implement sign-in UI and connect storefront/admin components to these methods behind loading, error, and empty states. Keep local demo fallback explicit; do not silently mix local and shared records.
-7. Test all roles and policies with separate anonymous, customer, maker, and admin sessions before using real data.
+## Configure later — gated
+1. Design a new hybrid-marketplace schema and role model; do not apply `schema.sql`.
+2. Review the RLS matrix, storage policies, server-side functions and cross-tenant test cases.
+3. Select a dedicated Triprasa Supabase project explicitly; confirm organization, region and ownership.
+4. Only after explicit approval, connect an isolated development project and apply reviewed migrations.
+5. Create test accounts for anonymous, customer, seller A, seller B, delivery partner and admin; test positive and negative access.
+6. Run Supabase security/performance advisors and remediate findings.
+7. Keep production disconnected until the full security and operational review is signed off.
 
-## Adapter methods prepared
-
-- Auth: `signInWithPassword`, `signOut`, `getCurrentUser`
-- Public catalogue: `listPublishedProducts`
-- Maker account: `submitMakerApplication`, `listOwnMakerApplications`
-- Admin: `adminListProducts`, `adminSaveProduct`, `adminDeleteProduct`, `adminListMakerApplications`, `adminReviewMakerApplication`
-
-## Deliberately not implemented yet
-
-- Real checkout, payment processing, refunds, shipping, inventory reservation, or order writes.
-- Public unauthenticated maker application submission.
-- User-facing sign-in/sign-up screens.
-- Switching the existing UI from IndexedDB/localStorage to Supabase.
-- Uploading product images to Storage.
+## Deliberately not implemented
+- Real checkout, payment processing, refunds, shipping, inventory reservation or order writes.
+- Seller or delivery partner account provisioning.
+- Public seller application submission to a server.
+- Switching storefront or admin from local demo data to shared records.
+- Product image uploads to shared storage.
 - Admin role provisioning from the client.
 
-Client-side order and order-item inserts are deliberately disabled in the proposed schema. Before checkout is enabled, move price validation, inventory checks, totals, and payment verification to a trusted server-side function and review order-item policies.
-
-## Security notes
-
-- Only use a publishable/anon key in browser code and rely on row-level security.
-- Never commit a service-role or secret key.
-- Maker applications are designed to require authentication and explicit contact consent.
-- The current `admin.html` page is still an unauthenticated browser-local prototype. Keep real data out of it until the admin UI is replaced with authenticated shared-backend access.
-- The adapter is not a substitute for reviewing schema policies and running security advisors.
+Client-side order creation must remain disabled. Before checkout is enabled, a trusted server-side function must validate price, stock, serviceability, fees, payment status and idempotency. The current `admin.html` is an unauthenticated browser-local prototype and must not be used for real data.
