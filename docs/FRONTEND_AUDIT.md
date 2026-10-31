@@ -59,3 +59,13 @@ Applied a balanced editorial + quick-commerce visual pass to the existing storef
 - Added responsive breakpoints and reduced-motion-aware transitions; retained existing content, sample data, browser-local demo flows and disclosure language.
 
 No real seller/product data, prices, inventory, serviceability, delivery capacity or payment capability was added. No Supabase configuration, migration or production connection was changed. This is a source-level visual implementation; cross-browser/device, visual-regression and accessibility testing remain outstanding.
+
+
+## Visual asset and photography presentation pass — 31 October 2026
+
+- Removed the large decorative emoji overlay from sample product photography so the existing editorial image assets read more clearly.
+- Added a visible “Illustrative image” disclosure on each sample product card and a corresponding “Illustrative image · sample listing” disclosure in product previews. The catalogue remains explicitly a sample catalogue and no sample image is represented as seller-supplied product photography.
+- Refined image crop positions, tonal overlays, framing and responsive disclosure sizing across product cards and detail previews.
+- Replaced the story section's emoji illustration with a lightweight CSS textile-inspired geometric motif and caption; no new product photography or seller claims were introduced.
+- Kept existing remote image sources and existing content/data unchanged. No new real product images were available in the repository; seller-provided, permission-cleared photography is still required before authentic listing imagery can replace these illustrative assets.
+- No backend, Supabase, payment, inventory, fulfilment, seller or order functionality was added or changed. Visual changes are source-level; real-device/browser and screen-reader QA remain outstanding.
