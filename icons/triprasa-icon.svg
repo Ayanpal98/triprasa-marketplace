@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Triprasa">
+  <rect width="512" height="512" rx="112" fill="#183d2c"/>
+  <path d="M256 55C160 139 104 211 104 301a152 152 0 0 0 304 0c0-90-56-162-152-246Z" fill="#d8b36c"/>
+  <path d="M162 340c70-12 131-75 188-174M162 340c43 10 83 2 119-28M256 158v198" fill="none" stroke="#183d2c" stroke-width="23" stroke-linecap="round"/>
+</svg>
