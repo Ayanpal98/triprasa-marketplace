@@ -32,6 +32,9 @@
 | Payments/ledger | No | Own payment/refund status | Own settlement statements | Own payout statements | Finance permissions |
 | Seller documents | No | No | Own seller documents | No | Restricted review access |
 
+## Current Supabase platform consideration
+As of 30 October 2026, Supabase has enforced the change that new tables are not automatically exposed through the Data and GraphQL APIs. When a project is eventually selected, explicitly review its exposed-schema settings and grant only the minimum required table/function privileges. Grants and RLS policies must be designed together; a table's API exposure is separate from its row-level policy. See the [Supabase Data API security guide](https://supabase.com/docs/guides/api/securing-your-api) and [RLS guide](https://supabase.com/docs/guides/database/postgres/row-level-security).
+
 ## Security requirements before any database connection
 - Dedicated Triprasa project selected by owner; confirm project reference and region.
 - Review current Supabase changelog and docs before using product-specific SQL/API behaviour.
