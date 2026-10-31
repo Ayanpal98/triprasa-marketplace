@@ -1,5 +1,7 @@
--- Triprasa shared-backend foundation
--- Review before applying to a Supabase project. This file is intentionally not auto-applied.
+-- LEGACY PROOF-OF-CONCEPT ONLY — NOT A PRODUCTION HYBRID-MARKETPLACE SCHEMA.
+-- Do not apply this file. It lacks seller tenancy, seller fulfilment orders, delivery jobs,
+-- inventory movements, payment events and settlement ledgers. See SECURITY_REVIEW.md.
+-- No Supabase project is connected. This file is retained for review/history only.
 create extension if not exists pgcrypto;
 
 create schema if not exists private;
