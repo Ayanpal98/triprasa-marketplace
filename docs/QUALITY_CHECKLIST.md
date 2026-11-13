@@ -10,7 +10,7 @@
 - [x] Close the product detail dialog with Escape.
 - [x] Remove duplicate CSS appended after the document closing tag.
 
-## Manual smoke test — still required
+## Manual smoke test — still required (not run in the 13 November source pass)
 - [ ] Open index.html directly and through a local static server.
 - [ ] Search by product name and category.
 - [ ] Filter each category and return to All categories.
@@ -21,6 +21,12 @@
 - [ ] Test Escape-key behavior and focus return for modal/drawer.
 - [ ] Confirm product names/descriptions containing HTML characters render as text.
 - [ ] Confirm there are no false seller verification, availability, price, review or traction claims.
+
+## PWA / service-worker review
+- [ ] Confirm service worker v2 activates and v1 cache is removed.
+- [ ] Confirm fresh HTML, scripts, styles and manifest are fetched when online.
+- [ ] Confirm previously cached app shell loads when offline.
+- [ ] Confirm cross-origin requests and non-GET requests are not intercepted.
 
 ## Responsive review
 - [ ] 360px mobile
