@@ -1335,7 +1335,7 @@ function displayArea(value,note){areaDisplay.textContent=value||"Choose your are
 if(savedArea)displayArea(savedArea,"Saved on this device · serviceability not checked");
 else displayArea("Choose your area","Delivery availability not connected");
 areaDisplay.title="Choose your shopping area";
-function openAreaModal(){dialogReturnFocus=document.activeElement;areaInput.value=savedArea||areaDisplay.textContent==="Choose your area"?"":areaDisplay.textContent;areaModal.classList.add("open");lockPageScroll();areaInput.focus()}
+function openAreaModal(){dialogReturnFocus=document.activeElement;areaInput.value=savedArea||(areaDisplay.textContent==="Choose your area"?"":areaDisplay.textContent);areaModal.classList.add("open");lockPageScroll();areaInput.focus()}
 function closeAreaModal(){const wasOpen=areaModal.classList.contains("open");areaModal.classList.remove("open");unlockPageScroll();if(wasOpen)restoreDialogFocus()}
 areaDisplay.addEventListener("click",openAreaModal);
 $("closeArea").addEventListener("click",closeAreaModal);
