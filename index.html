@@ -1341,7 +1341,7 @@ areaDisplay.addEventListener("click",openAreaModal);
 $("closeArea").addEventListener("click",closeAreaModal);
 $("cancelArea").addEventListener("click",closeAreaModal);
 areaModal.addEventListener("click",e=>{if(e.target===areaModal)closeAreaModal()});
-$("areaForm").addEventListener("submit",e=>{e.preventDefault();const clean=areaInput.value.trim().replace(/\\s+/g," ").slice(0,70);if(!clean){areaInput.focus();return}let note="Saved for this visit · serviceability not checked";try{localStorage.setItem("triprasa-shopping-area",clean);note="Saved on this device · serviceability not checked"}catch(error){console.warn("Could not persist shopping area",error)}displayArea(clean,note);closeAreaModal();notify("Shopping area saved. Delivery coverage is not checked.")});
+$("areaForm").addEventListener("submit",e=>{e.preventDefault();const clean=areaInput.value.trim().replace(/\s+/g," ").slice(0,70);if(!clean){areaInput.focus();return}let note="Saved for this visit · serviceability not checked";try{localStorage.setItem("triprasa-shopping-area",clean);note="Saved on this device · serviceability not checked"}catch(error){console.warn("Could not persist shopping area",error)}displayArea(clean,note);closeAreaModal();notify("Shopping area saved. Delivery coverage is not checked.")});
 // Graceful image fallback for the editorial hero when a remote image is unavailable.
 document.addEventListener("error",event=>{const img=event.target;if(!(img instanceof HTMLImageElement)||!img.closest(".qc-hero-art"))return;const frame=img.closest(".qc-hero-art");img.hidden=true;frame.classList.add("image-fallback");frame.setAttribute("role","img");frame.setAttribute("aria-label","Triprasa local discovery artwork");},{capture:true});
 initialiseLocalDB();render();
