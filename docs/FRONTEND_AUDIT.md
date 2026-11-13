@@ -69,3 +69,27 @@ No real seller/product data, prices, inventory, serviceability, delivery capacit
 - Replaced the story section's emoji illustration with a lightweight CSS textile-inspired geometric motif and caption; no new product photography or seller claims were introduced.
 - Kept existing remote image sources and existing content/data unchanged. No new real product images were available in the repository; seller-provided, permission-cleared photography is still required before authentic listing imagery can replace these illustrative assets.
 - No backend, Supabase, payment, inventory, fulfilment, seller or order functionality was added or changed. Visual changes are source-level; real-device/browser and screen-reader QA remain outstanding.
+
+
+## Frontend reliability pass — 13 November 2026
+
+### Source inspection
+- Rechecked the storefront JavaScript element references against HTML IDs: no missing references or duplicate IDs were found in the inspected `index.html`.
+- Confirmed search, category filtering, name sorting, wishlist and basket are browser-local demo interactions, not live commerce services.
+- Confirmed the seller-interest form remains local-only and the admin page remains an unauthenticated browser-local prototype.
+- Reconfirmed that no Supabase project, production migration, payment or live order workflow is connected.
+
+### Repair applied
+- Updated the service worker cache version to `triprasa-shell-v2` so clients activate the revised worker and retire the old cache.
+- Changed static asset handling from cache-first to network-first with cache fallback. Previously cached scripts, styles, images and the manifest can now refresh after deployment whenever the network is available.
+- Changed navigation caching to retain the actual requested URL and separately refresh the root app shell, rather than storing every successful navigation response under `/`.
+- Avoided caching non-success, opaque and `Cache-Control: no-store` responses.
+- Kept interception restricted to same-origin GET requests and bypassed requests carrying an Authorization header. No API, cross-origin or transaction data is intentionally added to the app-shell cache.
+
+### Not yet verified
+- No real browser/device run, service-worker lifecycle test, offline test, Lighthouse run, automated accessibility scan or visual regression test was executed in this pass.
+- The shopping-area selector still uses a native browser prompt.
+- Dialog focus containment and focus restoration require manual keyboard and assistive-technology validation.
+- Remote illustrative photography still needs load-failure, rights and performance checks on target devices.
+
+This is a source-level reliability repair, not a production commerce release or a claim that browser QA has passed.
