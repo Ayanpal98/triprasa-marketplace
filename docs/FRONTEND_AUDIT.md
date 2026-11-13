@@ -69,3 +69,16 @@ No real seller/product data, prices, inventory, serviceability, delivery capacit
 - Replaced the story section's emoji illustration with a lightweight CSS textile-inspired geometric motif and caption; no new product photography or seller claims were introduced.
 - Kept existing remote image sources and existing content/data unchanged. No new real product images were available in the repository; seller-provided, permission-cleared photography is still required before authentic listing imagery can replace these illustrative assets.
 - No backend, Supabase, payment, inventory, fulfilment, seller or order functionality was added or changed. Visual changes are source-level; real-device/browser and screen-reader QA remain outstanding.
+
+
+## Storefront usability polish — 13 November 2026
+
+Applied to `index.html`:
+- Replaced the blocking browser `prompt()` for shopping-area selection with an accessible in-page dialog, labelled input, Save/Not now actions, Escape-to-close, backdrop close and focus restoration.
+- Kept the location preference browser-local and made the no-serviceability-check disclosure explicit; no geolocation or delivery availability lookup was added.
+- Restored a compact, horizontally scrollable mobile navigation row instead of hiding all section navigation on narrow screens.
+- Added `aria-pressed` state to category filters and wishlist mode so assistive technology can identify active selections.
+- Added a useful empty-results state with a one-tap clear-search-and-filters action.
+- Improved keyboard focus visibility for category, filter and product-title controls.
+
+No live seller, catalogue, inventory, pricing, checkout, payment, delivery or backend capability was added. These changes are source-level only; real-device, cross-browser, screen-reader and automated accessibility QA remain required.

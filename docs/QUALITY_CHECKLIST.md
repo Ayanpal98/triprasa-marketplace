@@ -42,3 +42,13 @@
 
 ## Release gate
 Do not connect live forms, accounts, analytics, payments or a backend until privacy, security, legal and operational requirements are agreed and reviewed. See [FRONTEND_AUDIT.md](FRONTEND_AUDIT.md).
+
+
+## Storefront usability polish — source checks added 13 November 2026
+- [ ] Test shopping-area dialog open, save, cancel, backdrop close and Escape close.
+- [ ] Verify the saved area persists after reload when browser storage is available.
+- [ ] Verify storage-disabled/private-mode fallback remains usable and accurately labelled.
+- [ ] Test horizontal mobile navigation by touch and keyboard at 360px and 390–430px.
+- [ ] Confirm active category filters expose correct `aria-pressed` values.
+- [ ] Search for a no-match term and use Clear search & filters.
+- [ ] Verify the location selector never implies delivery serviceability or ETA.
